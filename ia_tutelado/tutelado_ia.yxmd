@@ -1,0 +1,2337 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2024.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="114" y="1506" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="54">C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mongo\datos_pedidos.json</File>
+          <FormatSpecificOptions>
+            <SingleField>True</SingleField>
+            <ReadStructured>False</ReadStructured>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>datos_pedidos.json</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="JSON_Name" size="1073741823" source="JSON_Input" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSON_Input" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="210" y="1506" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>JSON_Name</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>JSON_Name</RootName>
+          <Delimeters value="." />
+          <NumFields value="2" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="294" y="1506" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="JSON_Name1" />
+          </GroupFields>
+          <HeaderField field="JSON_Name2" />
+          <DataField field="JSON_ValueString" />
+          <Methods>
+            <Method method="Concat" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="ano_entrega" size="2048" source="CrossTab:Header:JSON_Name2:ano_entrega:Concat:" type="V_WString" />
+            <Field name="ano_envio" size="2048" source="CrossTab:Header:JSON_Name2:ano_envio:Concat:" type="V_WString" />
+            <Field name="business_shipping_name" size="2048" source="CrossTab:Header:JSON_Name2:business_shipping_name:Concat:" type="V_WString" />
+            <Field name="dia_entrega" size="2048" source="CrossTab:Header:JSON_Name2:dia_entrega:Concat:" type="V_WString" />
+            <Field name="dia_envio" size="2048" source="CrossTab:Header:JSON_Name2:dia_envio:Concat:" type="V_WString" />
+            <Field name="estado_pedido" size="2048" source="CrossTab:Header:JSON_Name2:estado_pedido:Concat:" type="V_WString" />
+            <Field name="historial_estado" size="2048" source="CrossTab:Header:JSON_Name2:historial_estado:Concat:" type="V_WString" />
+            <Field name="historial_localidades" size="2048" source="CrossTab:Header:JSON_Name2:historial_localidades:Concat:" type="V_WString" />
+            <Field name="hora_entrega" size="2048" source="CrossTab:Header:JSON_Name2:hora_entrega:Concat:" type="V_WString" />
+            <Field name="hora_envio" size="2048" source="CrossTab:Header:JSON_Name2:hora_envio:Concat:" type="V_WString" />
+            <Field name="id_pedido" size="2048" source="CrossTab:Header:JSON_Name2:id_pedido:Concat:" type="V_WString" />
+            <Field name="mes_entrega" size="2048" source="CrossTab:Header:JSON_Name2:mes_entrega:Concat:" type="V_WString" />
+            <Field name="mes_envio" size="2048" source="CrossTab:Header:JSON_Name2:mes_envio:Concat:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="78" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="54">C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mongo\datos_interacion.json</File>
+          <FormatSpecificOptions>
+            <SingleField>True</SingleField>
+            <ReadStructured>False</ReadStructured>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>datos_interacion.json</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="JSON_Name" size="1073741823" source="JSON_Input" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSON_Input" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="174" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>JSON_Name</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>JSON_Name</RootName>
+          <Delimeters value="." />
+          <NumFields value="2" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="258" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="JSON_Name1" />
+          </GroupFields>
+          <HeaderField field="JSON_Name2" />
+          <DataField field="JSON_ValueString" />
+          <Methods>
+            <Method method="Concat" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+          <RetainSpecChars value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="ano_interacion" size="2048" source="CrossTab:Header:JSON_Name2:ano_interacion:Concat:" type="V_WString" />
+            <Field name="descripcion_iteracion" size="2048" source="CrossTab:Header:JSON_Name2:descripcion iteracion:Concat:" type="V_WString" />
+            <Field name="dia_interacion" size="2048" source="CrossTab:Header:JSON_Name2:dia_interacion:Concat:" type="V_WString" />
+            <Field name="hora_interacion" size="2048" source="CrossTab:Header:JSON_Name2:hora_interacion:Concat:" type="V_WString" />
+            <Field name="id_cliente" size="2048" source="CrossTab:Header:JSON_Name2:id_cliente:Concat:" type="V_WString" />
+            <Field name="id_iteracion" size="2048" source="CrossTab:Header:JSON_Name2:id_iteracion:Concat:" type="V_WString" />
+            <Field name="mes_interacion" size="2048" source="CrossTab:Header:JSON_Name2:mes_interacion:Concat:" type="V_WString" />
+            <Field name="social_media_name" size="2048" source="CrossTab:Header:JSON_Name2:social_media_name:Concat:" type="V_WString" />
+            <Field name="tipo_interacion" size="2048" source="CrossTab:Header:JSON_Name2:tipo_interacion:Concat:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="186" y="126" width="300" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Convertimos a formato tabular os JSON das interaccions que temos gardamos na base de datos de Mongo DB</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="258" y="54" width="420" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text><![CDATA[TRANSFORMACIÓN ]]></Text>
+          <Font name="Arial" size="26.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="78" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_productos.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>datos_productos.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="id_producto" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_productos.csv" type="V_String" />
+            <Field name="nombre_producto" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_productos.csv" type="V_String" />
+            <Field name="categoria_producto" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_productos.csv" type="V_String" />
+            <Field name="cantidad_disponible" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_productos.csv" type="V_String" />
+            <Field name="precio" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_productos.csv" type="V_String" />
+            <Field name="fecha_abastecimiento" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_productos.csv" type="V_String" />
+            <Field name="proveedor" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_productos.csv" type="V_String" />
+            <Field name="ubicacion_almacen" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_productos.csv" type="V_String" />
+            <Field name="estado" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_productos.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="198" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>fecha_abastecimiento</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>fecha_abastecimiento</RootName>
+          <Delimeters value="-" />
+          <NumFields value="3" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="342" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="id_producto" selected="True" type="Int64" size="8" />
+            <SelectField field="cantidad_disponible" selected="True" type="Int64" size="8" />
+            <SelectField field="precio" selected="True" type="Double" size="8" />
+            <SelectField field="fecha_abastecimiento" selected="False" />
+            <SelectField field="fecha_abastecimiento1" selected="True" rename="Año_abastecimiento" type="Int32" size="4" />
+            <SelectField field="fecha_abastecimiento2" selected="True" rename="Mes_abastecimiento" type="Int32" size="4" />
+            <SelectField field="fecha_abastecimiento3" selected="True" rename="Dia_abastecimiento" type="Int32" size="4" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="78" y="486" width="324" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Convertimos a columna onde se garda a fecha de abastecimento en tres columnas para separar o dia, o mes e o ano da última vez que se abasteceu ese producto</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="198" y="846" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeParse([hora_transaccion],'%I:%M %P')" field="NewTime" size="2147483647" type="V_String" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[NewTime = DateTimeParse([hora_transaccion],'%I:%M %P')
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="78" y="846" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_transaccions.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>datos_transaccions.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="id_transaccion" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_transaccions.csv" type="V_String" />
+            <Field name="hora_transaccion" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_transaccions.csv" type="V_String" />
+            <Field name="dia_transaccion" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_transaccions.csv" type="V_String" />
+            <Field name="mes_transaccion" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_transaccions.csv" type="V_String" />
+            <Field name="ano_transaccion" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_transaccions.csv" type="V_String" />
+            <Field name="montante_total" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_transaccions.csv" type="V_String" />
+            <Field name="metodo_pago" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_transaccions.csv" type="V_String" />
+            <Field name="id_producto" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_transaccions.csv" type="V_String" />
+            <Field name="cantidad_vendida" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_transaccions.csv" type="V_String" />
+            <Field name="id_cliente" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_transaccions.csv" type="V_String" />
+            <Field name="canal_venta" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\sqlite3\datos_transaccions.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="330" y="846" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="id_transaccion" selected="True" type="Int64" size="8" />
+            <SelectField field="NewTime" selected="True" rename="hora_transaccion" />
+            <SelectField field="hora_transaccion" selected="False" />
+            <SelectField field="dia_transaccion" selected="True" type="Int32" size="4" />
+            <SelectField field="mes_transaccion" selected="True" type="Int32" size="4" />
+            <SelectField field="ano_transaccion" selected="True" type="Int32" size="4" />
+            <SelectField field="montante_total" selected="True" type="Double" size="8" />
+            <SelectField field="metodo_pago" selected="True" />
+            <SelectField field="id_producto" selected="True" type="Int64" size="8" />
+            <SelectField field="cantidad_vendida" selected="True" type="Int64" size="8" />
+            <SelectField field="id_cliente" selected="True" type="Int64" size="8" />
+            <SelectField field="canal_venta" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="90" y="1026" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_cliente.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>datos_cliente.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="id_cliente" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_cliente.csv" type="V_String" />
+            <Field name="nombre_completo" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_cliente.csv" type="V_String" />
+            <Field name="email" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_cliente.csv" type="V_String" />
+            <Field name="telefono" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_cliente.csv" type="V_String" />
+            <Field name="direccion" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_cliente.csv" type="V_String" />
+            <Field name="Estado" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_cliente.csv" type="V_String" />
+            <Field name="fecha_registro" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_cliente.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="234" y="1026" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>fecha_registro</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>fecha_registro</RootName>
+          <Delimeters value="/" />
+          <NumFields value="3" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="354" y="1026" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>direccion</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>direccion</RootName>
+          <Delimeters value=" " />
+          <NumFields value="2" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="534" y="1026" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="id_cliente" selected="True" type="Int64" size="8" />
+            <SelectField field="nombre_completo1" selected="True" rename="nombre" />
+            <SelectField field="nombre_completo2" selected="True" rename="apellidos" />
+            <SelectField field="nombre_completo" selected="False" />
+            <SelectField field="email" selected="True" />
+            <SelectField field="direccion1" selected="True" rename="Numero_direccion" type="Int32" size="4" />
+            <SelectField field="direccion2" selected="True" rename="Nombre_direccion" />
+            <SelectField field="Estado" selected="True" />
+            <SelectField field="telefono" selected="True" />
+            <SelectField field="direccion" selected="False" />
+            <SelectField field="fecha_registro1" selected="True" rename="Dia_registro" type="Int32" size="4" />
+            <SelectField field="fecha_registro2" selected="True" rename="Mes_registro" type="Int32" size="4" />
+            <SelectField field="fecha_registro3" selected="True" rename="Año_registro" type="Int32" size="4" />
+            <SelectField field="fecha_registro" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="222" y="990" width="336" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Separamos a columna direccion do cliente no numero da calle e no nombre.
+Tamen separamos a fecha de registro en dia,mes e ano</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="90" y="1770" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_empleado.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>datos_empleado.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="id_empleado" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_empleado.csv" type="V_String" />
+            <Field name="nombre" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_empleado.csv" type="V_String" />
+            <Field name="apellidos" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_empleado.csv" type="V_String" />
+            <Field name="departamento" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_empleado.csv" type="V_String" />
+            <Field name="correo_corporativo" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_empleado.csv" type="V_String" />
+            <Field name="telefono_corporativo" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_empleado.csv" type="V_String" />
+            <Field name="fecha_contratacion" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_empleado.csv" type="V_String" />
+            <Field name="numero_calle" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_empleado.csv" type="V_String" />
+            <Field name="nombre_calle" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_empleado.csv" type="V_String" />
+            <Field name="Estado" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_empleado.csv" type="V_String" />
+            <Field name="salario" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_empleado.csv" type="V_String" />
+            <Field name="tipo_contrato" size="254" source="File: C:\Users\oscar\Desktop\ia-tutelado\IA_datos\mysql\datos_empleado.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="198" y="1770" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>fecha_contratacion</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>fecha_contratacion</RootName>
+          <Delimeters value="." />
+          <NumFields value="3" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="342" y="1770" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="id_empleado" selected="True" />
+            <SelectField field="nombre" selected="False" />
+            <SelectField field="fecha_contratacion" selected="False" />
+            <SelectField field="apellidos" selected="False" />
+            <SelectField field="fecha_contratacion1" selected="False" rename="Dia_contratacion" type="Int32" size="4" />
+            <SelectField field="fecha_contratacion2" selected="False" rename="Mes_contratacion" type="Int32" size="4" />
+            <SelectField field="fecha_contratacion3" selected="False" rename="Año_contratacion" type="Int32" size="4" />
+            <SelectField field="departamento" selected="True" />
+            <SelectField field="correo_corporativo" selected="False" />
+            <SelectField field="telefono_corporativo" selected="False" />
+            <SelectField field="numero_calle" selected="False" type="Int32" size="4" />
+            <SelectField field="nombre_calle" selected="False" />
+            <SelectField field="Estado" selected="False" />
+            <SelectField field="salario" selected="True" type="Double" size="8" />
+            <SelectField field="tipo_contrato" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="90" y="1734" width="264" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Dividimos a fecha de contratacion do empleado en 3 columnas para diferenciar dia, mese ano</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings>
+        <Position x="366" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"descripcion_iteracion"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="474" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="JSON_Name1" selected="False" />
+            <SelectField field="id_iteracion" selected="True" type="Int64" size="8" />
+            <SelectField field="hora_interacion" selected="True" />
+            <SelectField field="dia_interacion" selected="False" type="Int32" size="4" />
+            <SelectField field="mes_interacion" selected="True" type="Int32" size="4" />
+            <SelectField field="ano_interacion" selected="False" type="Int32" size="4" />
+            <SelectField field="descripcion_iteracion" selected="False" type="V_String" size="2147483647" />
+            <SelectField field="social_media_name" selected="False" />
+            <SelectField field="tipo_interacion" selected="False" />
+            <SelectField field="id_cliente" selected="False" type="Int64" size="8" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="438" y="846" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="id_cliente" action="GroupBy" rename="id_cliente" />
+            <SummarizeField field="id_cliente" action="Count" rename="numero_transacciones" />
+            <SummarizeField field="cantidad_vendida" action="Sum" rename="total_productos" />
+            <SummarizeField field="montante_total" action="Avg" rename="media_montante" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1794" y="1254" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Estado</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2024-11-19 00:46:46</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>California</Operand>
+              <StartDate>2024-11-19 00:46:46</StartDate>
+              <EndDate>2024-11-19 00:46:46</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Estado] = "California"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1878" y="1146" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="id_cliente" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="id_cliente" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_id_cliente" selected="True" rename="Right_id_cliente" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2178" y="1146" width="468" height="52" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Nesta union, na izquierda temos os clientes que fixeron algunha transaccion, no medio temos os clientes de california que fixeron algunha transaccion e na dereita temos os clientes de California que non fixeron ningunha transaccion</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2010" y="1146" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="id_cliente" selected="False" />
+            <SelectField field="nombre" selected="True" />
+            <SelectField field="apellidos" selected="True" />
+            <SelectField field="numero_transacciones" selected="True" />
+            <SelectField field="total_productos" selected="True" />
+            <SelectField field="media_montante" selected="True" />
+            <SelectField field="Right_id_cliente" selected="False" />
+            <SelectField field="email" selected="False" />
+            <SelectField field="Numero_direccion" selected="True" />
+            <SelectField field="Nombre_direccion" selected="True" />
+            <SelectField field="Estado" selected="False" />
+            <SelectField field="telefono" selected="False" />
+            <SelectField field="Dia_registro" selected="False" />
+            <SelectField field="nombre_completo" selected="False" />
+            <SelectField field="Mes_registro" selected="False" />
+            <SelectField field="Año_registro" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="450" y="1026" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>nombre_completo</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>nombre_completo</RootName>
+          <Delimeters value=" " />
+          <NumFields value="2" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="270" y="690" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="montante_total" selected="True" />
+            <SelectField field="id_producto" selected="True" />
+            <SelectField field="id_cliente" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="66" y="798" width="288" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Convertimos a columna da hora en que hubo unha transacción de formato 12h a 24h</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="63">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="354" y="690" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="ToNumber([montante_total])" field="montante_n" size="8" type="Double" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[montante_n = ToNumber([montante_total])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="67">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="666" y="702" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="id_client_int" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="id_cliente" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_id_producto" selected="False" input="Left_" />
+                <SelectField field="Left_id_cliente" selected="False" input="Left_" />
+                <SelectField field="Right_id_cliente" selected="True" rename="Right_id_cliente" input="Right_" />
+                <SelectField field="Right_nombre" selected="False" input="Right_" />
+                <SelectField field="Right_apellidos" selected="False" input="Right_" />
+                <SelectField field="Right_email" selected="False" input="Right_" />
+                <SelectField field="Right_Numero_direccion" selected="False" input="Right_" />
+                <SelectField field="Right_Nombre_direccion" selected="False" input="Right_" />
+                <SelectField field="Right_telefono" selected="False" input="Right_" />
+                <SelectField field="Right_Dia_registro" selected="False" input="Right_" />
+                <SelectField field="Right_Mes_registro" selected="False" input="Right_" />
+                <SelectField field="Right_Año_registro" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="68">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="762" y="702" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Estado" action="GroupBy" rename="Estado" />
+            <SummarizeField field="montante_n" action="Sum" rename="Sum_montante_n" />
+            <SummarizeField field="id_producto_n" action="GroupBy" rename="id_producto_n" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="69">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="462" y="690" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="ToNumber([id_cliente])" field="id_client_int" size="8" type="Int64" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[id_client_int = ToNumber([id_cliente])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="70">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="906" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="id_producto" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="id_producto_n" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_categoria_producto" selected="False" input="Left_" />
+                <SelectField field="Left_cantidad_disponible" selected="False" input="Left_" />
+                <SelectField field="Left_precio" selected="False" input="Left_" />
+                <SelectField field="Left_proveedor" selected="False" input="Left_" />
+                <SelectField field="Left_ubicacion_almacen" selected="False" input="Left_" />
+                <SelectField field="Left_estado" selected="False" input="Left_" />
+                <SelectField field="Left_Año_abastecimiento" selected="False" input="Left_" />
+                <SelectField field="Left_Mes_abastecimiento" selected="False" input="Left_" />
+                <SelectField field="Left_Dia_abastecimiento" selected="False" input="Left_" />
+                <SelectField field="Right_Estado" selected="True" rename="Right_Estado" input="Right_" />
+                <SelectField field="Right_id_producto" selected="False" rename="Right_id_producto" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="71">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="546" y="690" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="ToNumber([id_producto])" field="id_producto_n" size="8" type="Int64" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[id_producto_n = ToNumber([id_producto])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="73">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1026" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Sum_montante_n" selected="True" rename="Ventas" />
+            <SelectField field="Right_Estado" selected="True" rename="Estado " />
+            <SelectField field="nombre_producto" selected="True" rename="Nombre producto" />
+            <SelectField field="id_producto_n" selected="False" />
+            <SelectField field="id_producto" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="75">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="414" y="654" width="100" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Casteos al tipo numerico correspondiente</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="76">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1002" y="594" width="100" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Nombre de productos, Suma total de ventas y Estado en donde ha sido realizada</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="78">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="426" y="1506" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="mes_envio" selected="True" />
+            <SelectField field="mes_entrega" selected="True" />
+            <SelectField field="JSON_Name1" selected="False" />
+            <SelectField field="id_pedido" selected="True" />
+            <SelectField field="hora_envio" selected="True" />
+            <SelectField field="hora_entrega" selected="True" />
+            <SelectField field="historial_localidades" selected="False" />
+            <SelectField field="historial_estado" selected="False" />
+            <SelectField field="estado_pedido" selected="True" />
+            <SelectField field="dia_envio" selected="True" />
+            <SelectField field="dia_entrega" selected="True" />
+            <SelectField field="business_shipping_name" selected="False" />
+            <SelectField field="ano_envio" selected="True" />
+            <SelectField field="ano_entrega" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="114" y="1458" width="300" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Convertimos a formato tabular os JSON dos pedidos que temos gardamos na base de datos de Mongo DB</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="79">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="558" y="1506" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeDiff(DateTimeParse([ano_envio]+&quot;-&quot;+[mes_envio]+&quot;-&quot;+[dia_envio]+&quot; &quot;+ &quot;00&quot;+&quot;:&quot;+&quot;00&quot;+&quot;:&quot;+&quot;00.5&quot;,'%Y-%m-%d %H:%M:%S'),DateTimeParse([ano_entrega]+&quot;-&quot;+[mes_entrega]+&quot;-&quot;+[dia_entrega]+&quot; &quot;+ &quot;00&quot;+&quot;:&quot;+&quot;00&quot;+&quot;:&quot;+&quot;00.5&quot;,'%Y-%m-%d %H:%M:%S'),'days')" field="dias_duracion_entrega" size="8" type="Int64" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>dias_duracion_entrega = DateTimeDiff(DateTimeParse([ano_envio]+"-"+[mes_envio]+"...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="81">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="114" y="1362" width="204" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>La hora_entrega está mal añadida, pinta que son datos de la tabla de interacciones</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor r="0" g="128" b="255" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="82">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="714" y="1506" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[dias_duracion_entrega] &gt;= 0 &amp;&amp; [estado_pedido] = 'retrasado'</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[dias_duracion_entrega] &gt;= 0 &amp;&amp; [estado_pedido] = 'retrasado'</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="83">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="882" y="1494" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="mes_envio" selected="False" />
+            <SelectField field="mes_entrega" selected="False" />
+            <SelectField field="hora_envio" selected="False" />
+            <SelectField field="hora_entrega" selected="False" />
+            <SelectField field="dia_envio" selected="False" />
+            <SelectField field="dia_entrega" selected="False" />
+            <SelectField field="ano_envio" selected="False" />
+            <SelectField field="ano_entrega" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="84">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="822" y="1434" width="204" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Obtener los pedidos retrasados que tengan sentido y cuantos días de retraso llevan</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="85">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1050" y="1446" width="204" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Resta de fecha envio y fecha entrega. Sacar envios retrasados y por cuanto (mayor que 0 para que tengan sentido)</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="86">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="462" y="1746" width="288" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Relacionar puesto de trabajo con salario medio</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="87">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="918" y="186" width="156" height="36" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Picos horas interaccion / meses de los usuarios</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="88">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="630" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="mes_interacion" action="GroupBy" rename="Mes de interacción" />
+            <SummarizeField field="id_iteracion" action="Count" rename="Número de interacciones" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="89">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="618" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeParse([hora_interacion],'%H')" field="rango_hora" size="8" type="Time" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[rango_hora = DateTimeParse([hora_interacion],'%H')
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="90">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="750" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="rango_hora" action="GroupBy" rename="Hora de interacción" />
+            <SummarizeField field="id_iteracion" action="Count" rename="Número de interacciones" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="92">
+      <GuiSettings Plugin="PlotlyCharting">
+        <Position x="870" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ChartingFields>
+            <Traces json:Array="true" xmlns:json="http://james.newtonking.com/projects/json">
+              <type>bar</type>
+              <mode>lines</mode>
+              <xsrc>Mes de interacción</xsrc>
+              <ysrc>Número de interacciones</ysrc>
+              <name>&lt;b&gt;Análisis de interacción por meses&lt;/b&gt;</name>
+              <marker>
+                <size>6</size>
+                <line>
+                  <width>0</width>
+                </line>
+              </marker>
+              <line>
+                <width>2</width>
+              </line>
+              <boxpoints>false</boxpoints>
+              <orientation>v</orientation>
+              <decreasing>
+                <line>
+                  <color>#7f7f7f</color>
+                </line>
+                <fillcolor>rgba(127, 127, 127, 0.5)</fillcolor>
+              </decreasing>
+              <increasing>
+                <line>
+                  <color>#17becf</color>
+                </line>
+                <fillcolor>rgba(23, 190, 207, 0.5)</fillcolor>
+              </increasing>
+              <autocolorscale>true</autocolorscale>
+              <stackgroup>1</stackgroup>
+              <textposition>None</textposition>
+            </Traces>
+            <Layout>
+              <title>
+                <text>
+                </text>
+              </title>
+              <font>
+                <family>sans-serif</family>
+                <size>12</size>
+              </font>
+              <autosize>false</autosize>
+              <width>800</width>
+              <height>900</height>
+              <showlegend>true</showlegend>
+              <hovermode>closest</hovermode>
+              <xaxis>
+                <range>-2.2705576493803239</range>
+                <range>12.386275448541719</range>
+                <autorange>false</autorange>
+                <tickfont>
+                  <size>12</size>
+                </tickfont>
+                <nticks>0</nticks>
+                <title>
+                  <text>Mes de interacción</text>
+                </title>
+                <type>linear</type>
+                <showline>true</showline>
+                <showgrid>true</showgrid>
+              </xaxis>
+              <yaxis>
+                <range>-2</range>
+                <range>27</range>
+                <autorange>false</autorange>
+                <title>
+                  <text>Número de interacciones</text>
+                </title>
+                <type>linear</type>
+                <showline>true</showline>
+                <showgrid>true</showgrid>
+              </yaxis>
+              <margin>
+                <pad>0</pad>
+                <t>100</t>
+                <b>80</b>
+                <l>49</l>
+                <r>49</r>
+              </margin>
+              <legend>
+                <font>
+                  <size>12</size>
+                </font>
+                <borderwidth>0</borderwidth>
+              </legend>
+            </Layout>
+          </ChartingFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="ComposerInteractiveCharting" />
+    </Node>
+    <Node ToolID="93">
+      <GuiSettings Plugin="PlotlyCharting">
+        <Position x="870" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ChartingFields>
+            <Traces json:Array="true" xmlns:json="http://james.newtonking.com/projects/json">
+              <type>scatter</type>
+              <mode>lines</mode>
+              <stackgroup>1</stackgroup>
+              <xsrc>Hora de interacción</xsrc>
+              <ysrc>Número de interacciones</ysrc>
+              <orientation>v</orientation>
+              <decreasing>
+                <line>
+                  <color>#7f7f7f</color>
+                </line>
+                <fillcolor>rgba(127, 127, 127, 0.5)</fillcolor>
+              </decreasing>
+              <increasing>
+                <line>
+                  <color>#17becf</color>
+                </line>
+                <fillcolor>rgba(23, 190, 207, 0.5)</fillcolor>
+              </increasing>
+              <name>Análisis de interacción por horas</name>
+              <line>
+                <width>2</width>
+              </line>
+            </Traces>
+            <Layout>
+              <title>
+                <text>
+                </text>
+              </title>
+              <font>
+                <family>sans-serif</family>
+                <size>12</size>
+              </font>
+              <autosize>false</autosize>
+              <width>700</width>
+              <height>849</height>
+              <showlegend>true</showlegend>
+              <hovermode>closest</hovermode>
+              <xaxis>
+                <range>-0.30576257467193191</range>
+                <range>25.498333515750016</range>
+                <autorange>false</autorange>
+                <title>
+                  <text>Hora de interacción</text>
+                </title>
+                <type>category</type>
+                <tickfont>
+                  <size>12</size>
+                </tickfont>
+                <nticks>0</nticks>
+              </xaxis>
+              <yaxis>
+                <range>-1.3222116565727795</range>
+                <range>17.967778566484636</range>
+                <autorange>false</autorange>
+                <title>
+                  <text>Número de interacciones</text>
+                </title>
+                <type>linear</type>
+              </yaxis>
+              <margin>
+                <pad>0</pad>
+                <t>100</t>
+                <b>80</b>
+                <l>80</l>
+                <r>80</r>
+              </margin>
+              <legend>
+                <font>
+                  <size>12</size>
+                </font>
+                <borderwidth>0</borderwidth>
+              </legend>
+              <dragmode>pan</dragmode>
+            </Layout>
+          </ChartingFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="ComposerInteractiveCharting" />
+    </Node>
+    <Node ToolID="97">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="606" y="1770" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="departamento" action="GroupBy" rename="Departamento" />
+            <SummarizeField field="salario" action="Avg" rename="Salario medio" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="99">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="486" y="1830" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF ToNumber([salario]) &lt;= 5000 THEN &quot;BAJO&quot;&#xA;ELSEIF ToNumber([salario]) &gt; 5000 &amp;&amp; ToNumber([salario]) &lt;= 10000 THEN &quot;MEDIO&quot;&#xA;ELSE &quot;ALTO&quot;&#xA;ENDIF" field="rango_salarial" size="64" type="String" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>rango_salarial = IF ToNumber([salario]) &lt;= 5000 THEN "BAJO"
+ELSEIF ToNumber([sal...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="100">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="606" y="1830" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="rango_salarial" action="GroupBy" rename="Rangos salarial" />
+            <SummarizeField field="id_empleado" action="Count" rename="Número de empleados" />
+            <SummarizeField field="departamento" action="GroupBy" rename="Departamento" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="103">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="714" y="1794" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Departamento" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Departamento" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_departamento" selected="True" rename="Right_departamento" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="104">
+      <GuiSettings Plugin="PlotlyCharting">
+        <Position x="894" y="1794" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ChartingFields>
+            <Traces>
+              <type>bar</type>
+              <mode>markers</mode>
+              <xsrc>Rangos salarial</xsrc>
+              <ysrc>Número de empleados</ysrc>
+              <name>Relación puesto de trabajo con salario medio</name>
+              <orientation>v</orientation>
+              <textposition>None</textposition>
+              <marker>
+                <line>
+                  <width>0</width>
+                </line>
+              </marker>
+            </Traces>
+            <Traces>
+              <type>box</type>
+              <mode>lines</mode>
+              <ysrc>Número de empleados</ysrc>
+              <name>Relacionar el número de empleados por departamento y rango salarial</name>
+              <stackgroup>1</stackgroup>
+              <orientation>v</orientation>
+              <yaxis>y2</yaxis>
+              <xsrc>Salario medio</xsrc>
+              <line>
+                <width>2</width>
+              </line>
+              <decreasing>
+                <line>
+                  <color>#7f7f7f</color>
+                </line>
+                <fillcolor>rgba(127, 127, 127, 0.5)</fillcolor>
+              </decreasing>
+              <increasing>
+                <line>
+                  <color>#17becf</color>
+                </line>
+                <fillcolor>rgba(23, 190, 207, 0.5)</fillcolor>
+              </increasing>
+              <boxpoints>false</boxpoints>
+            </Traces>
+            <Layout>
+              <title>
+                <text>
+                </text>
+              </title>
+              <font>
+                <family>sans-serif</family>
+                <size>12</size>
+              </font>
+              <autosize>false</autosize>
+              <width>700</width>
+              <height>849</height>
+              <showlegend>true</showlegend>
+              <hovermode>closest</hovermode>
+              <xaxis>
+                <range>-0.5</range>
+                <range>14.5</range>
+                <autorange>true</autorange>
+                <title>
+                  <text>Rangos salarial</text>
+                </title>
+                <tickfont>
+                  <size>12</size>
+                </tickfont>
+                <nticks>0</nticks>
+                <showline>false</showline>
+                <type>category</type>
+              </xaxis>
+              <yaxis>
+                <range>0</range>
+                <range>30.526315789473685</range>
+                <autorange>true</autorange>
+                <title>
+                  <text>Número de empleados</text>
+                </title>
+                <type>linear</type>
+              </yaxis>
+              <yaxis2>
+                <side>right</side>
+                <showgrid>false</showgrid>
+                <overlaying>y</overlaying>
+                <type>category</type>
+                <range>-0.27777777777777785</range>
+                <range>5.2777777777777777</range>
+                <autorange>true</autorange>
+              </yaxis2>
+              <margin>
+                <pad>0</pad>
+                <t>100</t>
+                <b>80</b>
+                <l>80</l>
+                <r>80</r>
+              </margin>
+              <legend>
+                <font>
+                  <size>12</size>
+                </font>
+                <borderwidth>0</borderwidth>
+              </legend>
+            </Layout>
+          </ChartingFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="ComposerInteractiveCharting" />
+    </Node>
+    <Node ToolID="106">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="810" y="1794" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="3082">
+            <Field field="Salario medio" order="Ascending" />
+            <Field field="Departamento" order="Ascending" />
+            <Field field="Rangos salarial" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Salario medio - Ascendente
+Departamento - Ascendente
+Rangos salarial - Ascendente</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="98">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="630" y="1950" width="288" height="36" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Relacionar el número de empleados por departamento y rango salarial</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="107">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerTable.PortfolioComposerTable">
+        <Position x="990" y="1494" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TableMode>Basic</TableMode>
+          <GroupingFields orderChanged="False" />
+          <Width>100%</Width>
+          <ShowHeader value="True" />
+          <ShowBarGraph value="False" />
+          <TableFields orderChanged="False">
+            <Field name="id_pedido" selected="True" Alignment="Left" />
+            <Field name="estado_pedido" selected="True" Alignment="Left" />
+            <Field name="dias_duracion_entrega" selected="True" Alignment="Right" />
+            <Field name="*Unknown" selected="True" Alignment="Right" />
+          </TableFields>
+          <TableStyles>
+            <Style Name="Data" Font="Arial" Size="8" TextColor="#000000" BackColor="#ffffff" AltColor="#f0f0f0" RowGroup="1" />
+            <Style Name="Header" Font="Arial" Size="10" TextColor="#000000" BackColor="#dbdbdb" />
+            <Style Name="Borders" Width="1" DataColor="#000000" HeaderColor="#000000" RowBorder="None" BasicColBorder="Default (Use Per Column Setting)" />
+            <Style Name="Table" CellPadding="0" ColumnPadding="0" TableBorder="true" Width="1" BorderColor="#000000" />
+          </TableStyles>
+          <StyleRules />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Tabla básica</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTablePlugin" />
+    </Node>
+    <Node ToolID="108">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerTable.PortfolioComposerTable">
+        <Position x="1134" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TableMode>Basic</TableMode>
+          <GroupingFields orderChanged="False" />
+          <Width>100%</Width>
+          <ShowHeader value="True" />
+          <ShowBarGraph value="False" />
+          <TableFields orderChanged="False">
+            <Field name="Ventas" selected="True" Alignment="Right" />
+            <Field name="Estado " selected="True" Alignment="Left" />
+            <Field name="Nombre producto" selected="True" Alignment="Left" />
+            <Field name="*Unknown" selected="True" Alignment="Right" />
+          </TableFields>
+          <TableStyles>
+            <Style Name="Data" Font="Arial" Size="8" TextColor="#000000" BackColor="#ffffff" AltColor="#f0f0f0" RowGroup="1" />
+            <Style Name="Header" Font="Arial" Size="10" TextColor="#000000" BackColor="#dbdbdb" />
+            <Style Name="Borders" Width="1" DataColor="#000000" HeaderColor="#000000" RowBorder="None" BasicColBorder="Default (Use Per Column Setting)" />
+            <Style Name="Table" CellPadding="0" ColumnPadding="0" TableBorder="true" Width="1" BorderColor="#000000" />
+          </TableStyles>
+          <StyleRules />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Tabla básica</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTablePlugin" />
+    </Node>
+    <Node ToolID="109">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerTable.PortfolioComposerTable">
+        <Position x="2118" y="1146" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TableMode>Basic</TableMode>
+          <GroupingFields orderChanged="False" />
+          <Width>100%</Width>
+          <ShowHeader value="True" />
+          <ShowBarGraph value="False" />
+          <TableFields orderChanged="False">
+            <Field name="nombre" selected="True" Alignment="Left" />
+            <Field name="apellidos" selected="True" Alignment="Left" />
+            <Field name="numero_transacciones" selected="True" Alignment="Right" />
+            <Field name="total_productos" selected="True" Alignment="Right" />
+            <Field name="media_montante" selected="True" Alignment="Right" />
+            <Field name="Numero_direccion" selected="True" Alignment="Right" />
+            <Field name="Nombre_direccion" selected="True" Alignment="Left" />
+            <Field name="*Unknown" selected="True" Alignment="Right" />
+          </TableFields>
+          <TableStyles>
+            <Style Name="Data" Font="Arial" Size="8" TextColor="#000000" BackColor="#ffffff" AltColor="#f0f0f0" RowGroup="1" />
+            <Style Name="Header" Font="Arial" Size="10" TextColor="#000000" BackColor="#dbdbdb" />
+            <Style Name="Borders" Width="1" DataColor="#000000" HeaderColor="#000000" RowBorder="None" BasicColBorder="Default (Use Per Column Setting)" />
+            <Style Name="Table" CellPadding="0" ColumnPadding="0" TableBorder="true" Width="1" BorderColor="#000000" />
+          </TableStyles>
+          <StyleRules />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Tabla básica</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTablePlugin" />
+    </Node>
+    <Node ToolID="111">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1254" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\oscar\AppData\Local\Temp\Alteryx\Engine_16740_1648bbe31a304f7ca5e674b4412c56d5_\Engine_16740_97b1e841ba014f4a968f1e78920231ca~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Informe</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="112">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="144" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>CARGA</Text>
+          <Font name="Arial" size="26.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="113">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="810" y="54" width="264" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>EXTRACCIÓN</Text>
+          <Font name="Arial" size="26.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="114">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1122" y="1494" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\oscar\AppData\Local\Temp\Alteryx\Engine_16740_1648bbe31a304f7ca5e674b4412c56d5_\Engine_16740_eef24b6e6ab64388bb445b3b41cbe389~.yxdb</TempFile>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="78" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="40" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="70" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output" />
+      <Destination ToolID="70" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="67" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="Output" />
+      <Destination ToolID="67" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="99" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="97" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output26" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="88" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="89" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="44" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="True" />
+      <Destination ToolID="44" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Join" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Output" />
+      <Destination ToolID="109" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="Output" />
+      <Destination ToolID="63" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="Output" />
+      <Destination ToolID="69" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Join" />
+      <Destination ToolID="68" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="69" Connection="Output" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="70" Connection="Join" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="108" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Output" />
+      <Destination ToolID="79" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="79" Connection="Output" />
+      <Destination ToolID="82" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="82" Connection="True" />
+      <Destination ToolID="83" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="83" Connection="Output" />
+      <Destination ToolID="107" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="88" Connection="Output" />
+      <Destination ToolID="92" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="89" Connection="Output" />
+      <Destination ToolID="90" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="90" Connection="Output" />
+      <Destination ToolID="93" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="97" Connection="Output" />
+      <Destination ToolID="103" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="100" Connection="Output" />
+      <Destination ToolID="103" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="99" Connection="Output" />
+      <Destination ToolID="100" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="103" Connection="Join" />
+      <Destination ToolID="106" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="106" Connection="Output" />
+      <Destination ToolID="104" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="107" Connection="Output" />
+      <Destination ToolID="114" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="108" Connection="Output" />
+      <Destination ToolID="111" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>tutelado_ia</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="c2f76dbf-ef42-47c1-811f-d77a082b5f40" />
+      <Telemetry>
+        <PreviousWorkflowId value="" />
+        <OriginWorkflowId value="c2f76dbf-ef42-47c1-811f-d77a082b5f40" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
