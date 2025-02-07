@@ -1,6 +1,6 @@
 # Esta repo contén tamén o traballo tutelado feito:
 
-**Carpeta [ia_tutelado](/ia-tutelado/)**
+**Carpeta [ia_tutelado](/ia_tutelado/)**
 
 # Nota final e correccións:
 
