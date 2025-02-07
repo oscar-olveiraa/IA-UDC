@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "6043edbb-8590-4597-b2b1-56c2376426e6",
+		"name": "Defensa IA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39505007",
+		"_collection_link": "https://ia8888-1994.postman.co/workspace/IA-Workspace~3029ef59-a4ea-4499-8574-bf989b3dc5b5/collection/39505007-6043edbb-8590-4597-b2b1-56c2376426e6?action=share&source=collection_link&creator=39505007"
+	},
+	"item": [
+		{
+			"name": "Actualizar Cliente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<customer xmlns=\"http://ws.udc.es/telco/xml\" customerId=\"2\">\n    <name>Cliente Segundo Modificado</name>\n    <dni>87654321H</dni>\n    <address>María Pita nº1</address>\n    <phoneNumber>981222222</phoneNumber>\n</customer>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/customers/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"customers",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar cliente por ID error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/customers/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"customers",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar cliente por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/customers/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"customers",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar cliente por DNI error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/customers/33333333A",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"customers",
+						"33333333A"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar cliente por DNI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/customers/87654321H",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"customers",
+						"87654321H"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar cliente por palabras 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/customers?keywords=cliente&startIndex=0&count=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"customers"
+					],
+					"query": [
+						{
+							"key": "keywords",
+							"value": "cliente"
+						},
+						{
+							"key": "startIndex",
+							"value": "0"
+						},
+						{
+							"key": "count",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar cliente por palabras 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/customers?keywords=SEGUNDO&startIndex=0&count=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"customers"
+					],
+					"query": [
+						{
+							"key": "keywords",
+							"value": "SEGUNDO"
+						},
+						{
+							"key": "startIndex",
+							"value": "0"
+						},
+						{
+							"key": "count",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar llamadas para facturar 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/phoneCall?customerId=1&year=2025&month=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"phoneCall"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1"
+						},
+						{
+							"key": "year",
+							"value": "2025"
+						},
+						{
+							"key": "month",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar llamadas para facturar 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7070/rs-telco-service/phoneCall?customerId=1&year=2024&month=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"rs-telco-service",
+						"phoneCall"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "1"
+						},
+						{
+							"key": "year",
+							"value": "2024"
+						},
+						{
+							"key": "month",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WizardCorrelationProperties.wsdl" targetNamespace="http://enterprise.netbeans.org/bpel/WizardCorrelationProperties" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:ns="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getCallsInfo" xmlns:ns1="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCall" xmlns:tns="http://enterprise.netbeans.org/bpel/WizardCorrelationProperties" xmlns:ns2="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCallPaid">
+    <import namespace="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getCallsInfo" location="getCallsInfo.wsdl"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCall" location="getConfirmationCall.wsdl"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCallPaid" location="getConfirmationCallPaid.wsdl"/>
+    <vprop:property name="wzrd_prop_long_long" type="xsd:long"/>
+    <vprop:propertyAlias propertyName="tns:wzrd_prop_long_long" messageType="ns:getCallsInfoOperationRequest" part="clientId"/>
+    <vprop:propertyAlias propertyName="tns:wzrd_prop_long_long" messageType="ns1:getConfirmationCallOperationRequest" part="customerId"/>
+    <vprop:property name="wzrd_prop_int_int" type="xsd:int"/>
+    <vprop:propertyAlias propertyName="tns:wzrd_prop_int_int" messageType="ns:getCallsInfoOperationRequest" part="year"/>
+    <vprop:propertyAlias propertyName="tns:wzrd_prop_int_int" messageType="ns1:getConfirmationCallOperationRequest" part="year"/>
+    <vprop:property name="wzrd_prop_byte_byte" type="xsd:byte"/>
+    <vprop:propertyAlias propertyName="tns:wzrd_prop_byte_byte" messageType="ns:getCallsInfoOperationRequest" part="month"/>
+    <vprop:propertyAlias propertyName="tns:wzrd_prop_byte_byte" messageType="ns1:getConfirmationCallOperationRequest" part="month"/>
+    <vprop:propertyAlias propertyName="tns:wzrd_prop_long_long" messageType="ns2:getConfirmationCallPaidOperationRequest" part="customId"/>
+    <vprop:propertyAlias propertyName="tns:wzrd_prop_int_int" messageType="ns2:getConfirmationCallPaidOperationRequest" part="year"/>
+    <vprop:propertyAlias propertyName="tns:wzrd_prop_byte_byte" messageType="ns2:getConfirmationCallPaidOperationRequest" part="month"/>
+</definitions>

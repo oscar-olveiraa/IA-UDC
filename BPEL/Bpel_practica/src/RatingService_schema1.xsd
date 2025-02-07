@@ -1,0 +1,46 @@
+<!--  Published by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.  -->
+<xs:schema xmlns:tns="http://rs.udc.es/rating" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://rs.udc.es/rating">
+<xs:element name="RatingException" nillable="true" type="xs:string"/>
+<xs:element name="getDiscount" type="tns:getDiscount"/>
+<xs:element name="getDiscountResponse" type="tns:getDiscountResponse"/>
+<xs:element name="getPhoneCallPrice" type="tns:getPhoneCallPrice"/>
+<xs:element name="getPhoneCallPriceResponse" type="tns:getPhoneCallPriceResponse"/>
+<xs:complexType name="getPhoneCallPrice">
+<xs:sequence>
+<xs:element name="phoneCall" type="tns:phoneCall" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="phoneCall">
+<xs:sequence>
+<xs:element name="destinationNumber" type="xs:string" minOccurs="0"/>
+<xs:element name="duration" type="xs:long" minOccurs="0"/>
+<xs:element name="phoneCallId" type="xs:long" minOccurs="0"/>
+<xs:element name="phoneCallType" type="tns:phoneCallType" minOccurs="0"/>
+<xs:element name="startDate" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getPhoneCallPriceResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getDiscount">
+<xs:sequence>
+<xs:element name="customerId" type="xs:long"/>
+<xs:element name="month" type="xs:short"/>
+<xs:element name="year" type="xs:short"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getDiscountResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+<xs:simpleType name="phoneCallType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="LOCAL"/>
+<xs:enumeration value="NATIONAL"/>
+<xs:enumeration value="INTERNATIONAL"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

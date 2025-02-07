@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="CompositeApp1" xmlns:ns2="http://rs.udc.es/telco" xmlns:ns3="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getCallsInfo" xmlns:ns4="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCall" xmlns:ns5="http://rs.udc.es/rating" xmlns:ns6="http://rs.udc.es/reward" xmlns:ns7="http://rs.udc.es/billing" xmlns:ns8="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCallPaid" xmlns:ns9="http://enterprise.netbeans.org/bpel/Bpel_practica/bpel_practica" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="TelcoProvider" interface-name="ns2:TelcoProvider" name="endpoint1" service-name="ns1:CompositeApp1Service1"/>
+        <endpoint endpoint-name="getCallsInfo" interface-name="ns3:getCallsInfoPortType" name="endpoint2" service-name="ns1:CompositeApp1Service2"/>
+        <endpoint endpoint-name="sendConfirmation" interface-name="ns4:getConfirmationCallPortType" name="endpoint3" service-name="ns1:CompositeApp1Service3"/>
+        <endpoint endpoint-name="RatingProvider" interface-name="ns5:RatingProvider" name="endpoint4" service-name="ns1:CompositeApp1Service4"/>
+        <endpoint endpoint-name="rewardProvider" interface-name="ns6:RewardProvider" name="endpoint5" service-name="ns1:CompositeApp1Service5"/>
+        <endpoint endpoint-name="billingProvider" interface-name="ns7:BillingProvider" name="endpoint6" service-name="ns1:CompositeApp1Service6"/>
+        <endpoint endpoint-name="sendConfirmationPaid" interface-name="ns8:getConfirmationCallPaidPortType" name="endpoint7" service-name="ns1:CompositeApp1Service7"/>
+        <endpoint display-name="getCallsInfoPartnerLink" endpoint-name="getCallsInfoPortTypeRole_myRole" file-path="bpel_practica.bpel" interface-name="ns3:getCallsInfoPortType" name="endpoint8" process-name="bpel_practica" service-name="ns9:getCallsInfoPartnerLink"/>
+        <endpoint display-name="getConfirmationCallPartnerLink" endpoint-name="getConfirmationCallPortTypeRole_myRole" file-path="bpel_practica.bpel" interface-name="ns4:getConfirmationCallPortType" name="endpoint9" process-name="bpel_practica" service-name="ns9:getConfirmationCallPartnerLink"/>
+        <endpoint display-name="getConfirmationCallPaidPartnerLink" endpoint-name="getConfirmationCallPaidPortTypeRole_myRole" file-path="bpel_practica.bpel" interface-name="ns8:getConfirmationCallPaidPortType" name="endpoint10" process-name="bpel_practica" service-name="ns9:getConfirmationCallPaidPartnerLink"/>
+        <endpoint display-name="TelcoServicePartnerLink" endpoint-name="TelcoProviderRole_partnerRole" file-path="bpel_practica.bpel" interface-name="ns2:TelcoProvider" name="endpoint11" process-name="bpel_practica" service-name="ns9:TelcoServicePartnerLink"/>
+        <endpoint display-name="RatingServicePartnerLink" endpoint-name="RatingProviderRole_partnerRole" file-path="bpel_practica.bpel" interface-name="ns5:RatingProvider" name="endpoint12" process-name="bpel_practica" service-name="ns9:RatingServicePartnerLink"/>
+        <endpoint display-name="BillingServicePartnerLink" endpoint-name="BillingProviderRole_partnerRole" file-path="bpel_practica.bpel" interface-name="ns7:BillingProvider" name="endpoint13" process-name="bpel_practica" service-name="ns9:BillingServicePartnerLink"/>
+        <endpoint display-name="RewardServicePartnerLink" endpoint-name="RewardProviderRole_partnerRole" file-path="bpel_practica.bpel" interface-name="ns6:RewardProvider" name="endpoint14" process-name="bpel_practica" service-name="ns9:RewardServicePartnerLink"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="Bpel_practica.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="CompositeApp1-Bpel_practica" unit-name="Bpel_practica" unknown="false" x="228" y="260">
+            <provides endpoint="endpoint8"/>
+            <provides endpoint="endpoint9"/>
+            <provides endpoint="endpoint10"/>
+            <consumes endpoint="endpoint11"/>
+            <consumes endpoint="endpoint12"/>
+            <consumes endpoint="endpoint13"/>
+            <consumes endpoint="endpoint14"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="CompositeApp1-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port bindingType="soap" x="232" y="166">
+                    <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service1']/port[@name='TelcoProvider'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+                <port bindingType="soap" x="232" y="511">
+                    <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service2']/port[@name='getCallsInfo'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+                <port bindingType="soap" x="232" y="432">
+                    <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service3']/port[@name='sendConfirmation'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
+                </port>
+                <port bindingType="soap" x="232" y="84">
+                    <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service4']/port[@name='RatingProvider'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint4"/>
+                    <provides endpoint="endpoint4"/>
+                </port>
+                <port bindingType="soap" x="232" y="353">
+                    <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service5']/port[@name='rewardProvider'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint5"/>
+                    <provides endpoint="endpoint5"/>
+                </port>
+                <port bindingType="soap" x="232" y="274">
+                    <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service6']/port[@name='billingProvider'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint6"/>
+                    <provides endpoint="endpoint6"/>
+                </port>
+                <port bindingType="soap" x="232" y="590">
+                    <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service7']/port[@name='sendConfirmationPaid'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint7"/>
+                    <provides endpoint="endpoint7"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint7" mode="" provider="endpoint10" route-type="direct" routing-rule="" state="new"/>
+        <connection consumer="endpoint13" mode="" provider="endpoint6" route-type="direct" routing-rule="" state="new"/>
+        <connection consumer="endpoint11" mode="" provider="endpoint1" route-type="direct" routing-rule="" state="new"/>
+        <connection consumer="endpoint12" mode="" provider="endpoint4" route-type="direct" routing-rule="" state="new"/>
+        <connection consumer="endpoint3" mode="" provider="endpoint9" route-type="direct" routing-rule="" state="new"/>
+        <connection consumer="endpoint2" mode="" provider="endpoint8" route-type="direct" routing-rule="" state="new"/>
+        <connection consumer="endpoint14" mode="" provider="endpoint5" route-type="direct" routing-rule="" state="new"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Bpel_practica/RewardService.wsdl#xpointer(/definitions/portType[@name='RewardProvider'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Bpel_practica/getConfirmationCall.wsdl#xpointer(/definitions/portType[@name='getConfirmationCallPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Bpel_practica/BillingService.wsdl#xpointer(/definitions/portType[@name='BillingProvider'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Bpel_practica/getCallsInfo.wsdl#xpointer(/definitions/portType[@name='getCallsInfoPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Bpel_practica/getCallsInfo.wsdl#xpointer(/definitions/portType[@name='sendConfirmationPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Bpel_practica/getConfirmationCallPaid.wsdl#xpointer(/definitions/portType[@name='getConfirmationCallPaidPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Bpel_practica/RatingService.wsdl#xpointer(/definitions/portType[@name='RatingProvider'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Bpel_practica/TelcoService.wsdl#xpointer(/definitions/portType[@name='TelcoProvider'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CompositeApp1.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/binding[@name='casaBinding2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/binding[@name='casaBinding4'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/binding[@name='casaBinding6'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/binding[@name='casaBinding5'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/binding[@name='casaBinding3'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/binding[@name='casaBinding7'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CompositeApp1.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CompositeApp1.wsdl#xpointer(/definitions/binding[@name='casaBinding2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CompositeApp1.wsdl#xpointer(/definitions/binding[@name='casaBinding4'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CompositeApp1.wsdl#xpointer(/definitions/binding[@name='casaBinding6'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CompositeApp1.wsdl#xpointer(/definitions/binding[@name='casaBinding5'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CompositeApp1.wsdl#xpointer(/definitions/binding[@name='casaBinding3'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CompositeApp1.wsdl#xpointer(/definitions/binding[@name='casaBinding7'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service3'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service4'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service5'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service6'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service7'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service3'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service4'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service5'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service6'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CompositeApp1.wsdl#xpointer(/definitions/service[@name='CompositeApp1Service7'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="315"/>
+        <region name="JBI Modules" width="734"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>

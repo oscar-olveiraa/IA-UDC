@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="getCallsInfo" targetNamespace="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getCallsInfo"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getCallsInfo" xmlns:ns="http://rs.udc.es/telco" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:ns0="http://rs.udc.es/billing">
+    <types>
+        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getCallsInfo">
+            <xsd:import namespace="http://rs.udc.es/telco" schemaLocation="TelcoService_schema1.xsd"/>
+            <xsd:import namespace="http://rs.udc.es/billing" schemaLocation="BillingService_schema1.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="getCallsInfoOperationRequest">
+        <part name="clientId" type="xsd:long"/>
+        <part name="month" type="xsd:byte"/>
+        <part name="year" type="xsd:int"/>
+    </message>
+    <message name="getCallsInfoOperationResponse">
+        <part name="billId" type="xsd:long"/>
+        <part name="totalAmount" type="xsd:double"/>
+        <part name="paymentStatus" type="ns:phoneCallStatus"/>
+        <part name="pricedCallsList" type="ns0:pricedPhoneCallsList"/>
+    </message>
+    <message name="sendConfirmationRequest">
+        <part name="confirmation" type="xsd:boolean"/>
+    </message>
+    <message name="sendConfirmationResponse">
+        <part name="confirmation" type="xsd:boolean"/>
+    </message>
+    <portType name="getCallsInfoPortType">
+        <operation name="getCallsInfoOperation">
+            <input name="input1" message="tns:getCallsInfoOperationRequest"/>
+            <output name="output1" message="tns:getCallsInfoOperationResponse"/>
+        </operation>
+    </portType>
+    <portType name="sendConfirmationPortType">
+        <operation name="sendConfirmationOperation">
+            <input name="input1" message="tns:sendConfirmationRequest"/>
+            <output name="output1" message="tns:sendConfirmationResponse"/>
+        </operation>
+    </portType>
+    <plnk:partnerLinkType name="getCallsInfo">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="getCallsInfoPortTypeRole" portType="tns:getCallsInfoPortType"/>
+    </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="sendConfirmation">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="sendConfirmationPortTypeRole" portType="tns:sendConfirmationPortType"/>
+    </plnk:partnerLinkType>
+    <vprop:property name="clientID" type="xsd:long"/>
+</definitions>

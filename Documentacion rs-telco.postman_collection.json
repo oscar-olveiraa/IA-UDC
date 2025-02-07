@@ -1,0 +1,1649 @@
+{
+	"info": {
+		"_postman_id": "c1ff1fe0-3abe-4ea9-88de-506c276caa88",
+		"name": "Aplicacion rs-telco",
+		"description": "Documentacion acerca del servicio de telecomunicaciones para la gestión de clientes y sus llamadas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39505007",
+		"_collection_link": "https://ia8888-1994.postman.co/workspace/3029ef59-a4ea-4499-8574-bf989b3dc5b5/collection/39505007-c1ff1fe0-3abe-4ea9-88de-506c276caa88?action=share&source=collection_link&creator=39505007"
+	},
+	"item": [
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Buscar un cliente por su ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customers/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6522532106",
+											"description": "(Required) ID del cliente que queremos buscar"
+										}
+									]
+								},
+								"description": "Muestra informacion de un cliente buscando por su ID"
+							},
+							"response": [
+								{
+									"name": "Cliente encontrado con éxito",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "El cliente no existe",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"instanceId\": {},\n  \"instanceType\": \"<string>\",\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Actualizar los datos de un cliente",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"address\": \"<string>\",\n  \"customerId\": \"<long>\",\n  \"dni\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customers/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "Los datos del cliente que queremos actualizar van el cuerpo de la petición"
+							},
+							"response": [
+								{
+									"name": "Cliente actualizado con éxito",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"address\": \"<string>\",\n  \"customerId\": \"<long>\",\n  \"dni\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Alguno de los parametros que están en el cuerpo son incorrectos",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"address\": \"<string>\",\n  \"customerId\": \"<long>\",\n  \"dni\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "El cliente no existe",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"address\": \"<string>\",\n  \"customerId\": \"<long>\",\n  \"dni\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"instanceId\": {},\n  \"instanceType\": \"<string>\",\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Eliminar un cliente que está registrado",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customers/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6522532106",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "Se especifica en la url el ID del cliente, pero no puede tener ningunha llamada realizada"
+							},
+							"response": [
+								{
+									"name": "Cliente eliminado con éxito",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "No existe ese usuario",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"instanceId\": {},\n  \"instanceType\": \"<string>\",\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "El cliente no se puede eliminar porque tiene llamadas en su historial",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{dni}",
+					"item": [
+						{
+							"name": "Buscar un cliente por su DNI",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customers/:dni",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										":dni"
+									],
+									"variable": [
+										{
+											"key": "dni",
+											"value": "<string>",
+											"description": "(Required) DNI del cliente que queremos buscar"
+										}
+									]
+								},
+								"description": "Muestra el cliente con el DNI que se especifica en la URL"
+							},
+							"response": [
+								{
+									"name": "Cliente encontrado con éxito",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/customers/:dni",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":dni"
+											],
+											"variable": [
+												{
+													"key": "dni"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "El cliente con ese DNI no existe",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customers/:dni",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":dni"
+											],
+											"variable": [
+												{
+													"key": "dni"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"instanceId\": {},\n  \"instanceType\": \"<string>\",\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Busqueda de clientes por su nombre",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/customers?keywords=<string>&startIndex=<string>&count=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers"
+							],
+							"query": [
+								{
+									"key": "keywords",
+									"value": "<string>",
+									"description": "(Required) nombre del cliente a buscar"
+								},
+								{
+									"key": "startIndex",
+									"value": "<string>",
+									"description": "(Required) Indice sobre el que vamos hacer la búsqueda"
+								},
+								{
+									"key": "count",
+									"value": "<string>",
+									"description": "(Required) Numero de clientes que se mostrarán"
+								}
+							]
+						},
+						"description": "Devuelve lista de clientes que coincidan con el patrón de caracteres especificado"
+					},
+					"response": [
+						{
+							"name": "Devuelve los clientes que coinciden con nombre especificado",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/customers?keywords=<string>&startIndex=<string>&count=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									],
+									"query": [
+										{
+											"key": "keywords",
+											"value": "<string>",
+											"description": "(Required) nombre del cliente a buscar"
+										},
+										{
+											"key": "startIndex",
+											"value": "<string>",
+											"description": "(Required) Indice sobre el que vamos hacer la búsqueda"
+										},
+										{
+											"key": "count",
+											"value": "<string>",
+											"description": "(Required) Numero de clientes que se mostrarán"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Alguno los parámetros establecidos en la petición no son correctos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customers?keywords=<string>&startIndex=<string>&count=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									],
+									"query": [
+										{
+											"key": "keywords",
+											"value": "<string>",
+											"description": "(Required) nombre del cliente a buscar"
+										},
+										{
+											"key": "startIndex",
+											"value": "<string>",
+											"description": "(Required) Indice sobre el que vamos hacer la búsqueda"
+										},
+										{
+											"key": "count",
+											"value": "<string>",
+											"description": "(Required) Numero de clientes que se mostrarán"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"instanceId\": {},\n  \"instanceType\": \"<string>\",\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Peticion para añadir de un cliente en la aplicacion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"address\": \"<string>\",\n  \"customerId\": \"<long>\",\n  \"dni\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers"
+							]
+						},
+						"description": "Los parámetros del cliente se indican en cuerpo de la peticion"
+					},
+					"response": [
+						{
+							"name": "Cliente creado correctamente",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"address\": \"<string>\",\n  \"customerId\": \"<long>\",\n  \"dni\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Algún parámetro es incorrecto",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"address\": \"<string>\",\n  \"customerId\": \"<long>\",\n  \"dni\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "phoneCall",
+			"item": [
+				{
+					"name": "updateStatusCall",
+					"item": [
+						{
+							"name": "Cambiar el estado de las llamadas",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "*/*"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"customerId\": \"<string>\",\n  \"month\": \"<string>\",\n  \"newStatus\": \"<string>\",\n  \"year\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/phoneCall/updateStatusCall",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"phoneCall",
+										"updateStatusCall"
+									]
+								},
+								"description": "Las llamadas se pueden actualizar de PENDING a BILLED, o de BILLED a PAID indicando los datos necesarios en el formulario de la peticion"
+							},
+							"response": [
+								{
+									"name": "Llamadas actualizadas con éxito",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"customerId\": \"<string>\",\n  \"month\": \"<string>\",\n  \"newStatus\": \"<string>\",\n  \"year\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/phoneCall/updateStatusCall",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"phoneCall",
+												"updateStatusCall"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Los argumentos del formulario son incorrectos",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "*/*"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"customerId\": \"<string>\",\n  \"month\": \"<string>\",\n  \"newStatus\": \"<string>\",\n  \"year\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/phoneCall/updateStatusCall",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"phoneCall",
+												"updateStatusCall"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "El ID de cliente no existe",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "*/*"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"customerId\": \"<string>\",\n  \"month\": \"<string>\",\n  \"newStatus\": \"<string>\",\n  \"year\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/phoneCall/updateStatusCall",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"phoneCall",
+												"updateStatusCall"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"instanceId\": {},\n  \"instanceType\": \"<string>\",\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "Error al intentar cambiar el estado de una llamada a un estado incorrecto",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "*/*"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"customerId\": \"<string>\",\n  \"month\": \"<string>\",\n  \"newStatus\": \"<string>\",\n  \"year\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/phoneCall/updateStatusCall",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"phoneCall",
+												"updateStatusCall"
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{customerId}",
+					"item": [
+						{
+							"name": "Buscar llamadas en un rango de fechas",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/phoneCall/:customerId?startDate=<string>&endDate=<string>&type=<string>&start=<string>&maxResults=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"phoneCall",
+										":customerId"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "<string>",
+											"description": "(Required) Fecha de inicio del intervalo de búsqueda"
+										},
+										{
+											"key": "endDate",
+											"value": "<string>",
+											"description": "(Required) Fecha de fin del intervalo de búsqueda"
+										},
+										{
+											"key": "type",
+											"value": "<string>",
+											"description": "Tipo de llamada que queremos buscar en ese intervalo (OPCIONAL)"
+										},
+										{
+											"key": "start",
+											"value": "<string>",
+											"description": "(Required) Indice sobre el que vamos hacer la búsqueda"
+										},
+										{
+											"key": "maxResults",
+											"value": "<string>",
+											"description": "(Required) Numero de clientes que se mostrarán"
+										}
+									],
+									"variable": [
+										{
+											"key": "customerId",
+											"value": "6522532106",
+											"description": "(Required) ID del cliente que realizó las llamadas"
+										}
+									]
+								},
+								"description": "Buscar llamadas en un intervalo de tiempo. De forma opcional, se puede especificar el tipo de llamadas que queremos obtener en ese rango (LOCAL, NACIONAL o INTERNACIONAL)"
+							},
+							"response": [
+								{
+									"name": "Devuelve las llamadas de ese intervalo",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/phoneCall/:customerId?startDate=<string>&endDate=<string>&type=<string>&start=<string>&maxResults=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"phoneCall",
+												":customerId"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "<string>",
+													"description": "(Required) Fecha de inicio del intervalo de búsqueda"
+												},
+												{
+													"key": "endDate",
+													"value": "<string>",
+													"description": "(Required) Fecha de fin del intervalo de búsqueda"
+												},
+												{
+													"key": "type",
+													"value": "<string>",
+													"description": "Tipo de llamada que queremos buscar en ese intervalo (OPCIONAL)"
+												},
+												{
+													"key": "start",
+													"value": "<string>",
+													"description": "(Required) Indice sobre el que vamos hacer la búsqueda"
+												},
+												{
+													"key": "maxResults",
+													"value": "<string>",
+													"description": "(Required) Numero de clientes que se mostrarán"
+												}
+											],
+											"variable": [
+												{
+													"key": "customerId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Los parámetros de la petición son inválidos o incorrectos",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/phoneCall/:customerId?startDate=<string>&endDate=<string>&type=<string>&start=<string>&maxResults=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"phoneCall",
+												":customerId"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "<string>",
+													"description": "(Required) Fecha de inicio del intervalo de búsqueda"
+												},
+												{
+													"key": "endDate",
+													"value": "<string>",
+													"description": "(Required) Fecha de fin del intervalo de búsqueda"
+												},
+												{
+													"key": "type",
+													"value": "<string>",
+													"description": "Tipo de llamada que queremos buscar en ese intervalo (OPCIONAL)"
+												},
+												{
+													"key": "start",
+													"value": "<string>",
+													"description": "(Required) Indice sobre el que vamos hacer la búsqueda"
+												},
+												{
+													"key": "maxResults",
+													"value": "<string>",
+													"description": "(Required) Numero de clientes que se mostrarán"
+												}
+											],
+											"variable": [
+												{
+													"key": "customerId"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+								},
+								{
+									"name": "El ID del cliente no existe",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/phoneCall/:customerId?startDate=<string>&endDate=<string>&type=<string>&start=<string>&maxResults=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"phoneCall",
+												":customerId"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "<string>",
+													"description": "(Required) Fecha de inicio del intervalo de búsqueda"
+												},
+												{
+													"key": "endDate",
+													"value": "<string>",
+													"description": "(Required) Fecha de fin del intervalo de búsqueda"
+												},
+												{
+													"key": "type",
+													"value": "<string>",
+													"description": "Tipo de llamada que queremos buscar en ese intervalo (OPCIONAL)"
+												},
+												{
+													"key": "start",
+													"value": "<string>",
+													"description": "(Required) Indice sobre el que vamos hacer la búsqueda"
+												},
+												{
+													"key": "maxResults",
+													"value": "<string>",
+													"description": "(Required) Numero de clientes que se mostrarán"
+												}
+											],
+											"variable": [
+												{
+													"key": "customerId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"instanceId\": {},\n  \"instanceType\": \"<string>\",\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Buscar llamadas en un mes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/phoneCall?customerId=<string>&year=<string>&month=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"phoneCall"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "<string>",
+									"description": "(Required) Id del cliente que realizó las llamadas"
+								},
+								{
+									"key": "year",
+									"value": "<string>",
+									"description": "(Required) Año de las llamadas que queremos buscar"
+								},
+								{
+									"key": "month",
+									"value": "<string>",
+									"description": "(Required) Mes de las llamadas que queremos buscar"
+								}
+							]
+						},
+						"description": "Buscar las llamdas de un cliente en un mes y año vencido y con el estado de las llamadas en PENDING"
+					},
+					"response": [
+						{
+							"name": "Devuelve las llamadas",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/phoneCall?customerId=<string>&year=<string>&month=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"phoneCall"
+									],
+									"query": [
+										{
+											"key": "customerId",
+											"value": "<string>",
+											"description": "(Required) Id del cliente que realizó las llamadas"
+										},
+										{
+											"key": "year",
+											"value": "<string>",
+											"description": "(Required) Año de las llamadas que queremos buscar"
+										},
+										{
+											"key": "month",
+											"value": "<string>",
+											"description": "(Required) Mes de las llamadas que queremos buscar"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Los parámetros de la petición son inválidos o incorrectos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/phoneCall?customerId=<string>&year=<string>&month=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"phoneCall"
+									],
+									"query": [
+										{
+											"key": "customerId",
+											"value": "<string>",
+											"description": "(Required) Id del cliente que realizó las llamadas"
+										},
+										{
+											"key": "year",
+											"value": "<string>",
+											"description": "(Required) Año de las llamadas que queremos buscar"
+										},
+										{
+											"key": "month",
+											"value": "<string>",
+											"description": "(Required) Mes de las llamadas que queremos buscar"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+						},
+						{
+							"name": "El ID del cliente no existe",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/phoneCall?customerId=<string>&year=<string>&month=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"phoneCall"
+									],
+									"query": [
+										{
+											"key": "customerId",
+											"value": "<string>",
+											"description": "(Required) Id del cliente que realizó las llamadas"
+										},
+										{
+											"key": "year",
+											"value": "<string>",
+											"description": "(Required) Año de las llamadas que queremos buscar"
+										},
+										{
+											"key": "month",
+											"value": "<string>",
+											"description": "(Required) Mes de las llamadas que queremos buscar"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"instanceId\": {},\n  \"instanceType\": \"<string>\",\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+						},
+						{
+							"name": "Error al buscar llamadas en un mes que expiró pero que non están en estado PENDING",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/phoneCall?customerId=<string>&year=<string>&month=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"phoneCall"
+									],
+									"query": [
+										{
+											"key": "customerId",
+											"value": "<string>",
+											"description": "(Required) Id del cliente que realizó las llamadas"
+										},
+										{
+											"key": "year",
+											"value": "<string>",
+											"description": "(Required) Año de las llamadas que queremos buscar"
+										},
+										{
+											"key": "month",
+											"value": "<string>",
+											"description": "(Required) Mes de las llamadas que queremos buscar"
+										}
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Peticion para añadir llamadas",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"callStatus\": \"<string>\",\n  \"callType\": \"<string>\",\n  \"customerId\": \"<long>\",\n  \"destinationNumber\": \"<string>\",\n  \"duration\": \"<long>\",\n  \"startTime\": \"<string>\",\n  \"callId\": \"<long>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/phoneCall",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"phoneCall"
+							]
+						},
+						"description": "Los parámetros de la llamada deben indicarse en el cuerpo de la petición"
+					},
+					"response": [
+						{
+							"name": "Llamada creada exitosamente",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"callStatus\": \"<string>\",\n  \"callType\": \"<string>\",\n  \"customerId\": \"<long>\",\n  \"destinationNumber\": \"<string>\",\n  \"duration\": \"<long>\",\n  \"startTime\": \"<string>\",\n  \"callId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/phoneCall",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"phoneCall"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Los argumentos del cuerpo son incorrectos",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"callStatus\": \"<string>\",\n  \"callType\": \"<string>\",\n  \"customerId\": \"<long>\",\n  \"destinationNumber\": \"<string>\",\n  \"duration\": \"<long>\",\n  \"startTime\": \"<string>\",\n  \"callId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/phoneCall",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"phoneCall"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+						},
+						{
+							"name": "El ID del cliente no existe",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"callStatus\": \"<string>\",\n  \"callType\": \"<string>\",\n  \"customerId\": \"<long>\",\n  \"destinationNumber\": \"<string>\",\n  \"duration\": \"<long>\",\n  \"startTime\": \"<string>\",\n  \"callId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/phoneCall",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"phoneCall"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"cause\": {\n    \"stackTrace\": [\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      },\n      {\n        \"classLoaderName\": \"<string>\",\n        \"moduleName\": \"<string>\",\n        \"moduleVersion\": \"<string>\",\n        \"methodName\": \"<string>\",\n        \"fileName\": \"<string>\",\n        \"lineNumber\": \"<integer>\",\n        \"className\": \"<string>\",\n        \"nativeMethod\": \"<boolean>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"localizedMessage\": \"<string>\"\n  },\n  \"stackTrace\": [\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    },\n    {\n      \"classLoaderName\": \"<string>\",\n      \"moduleName\": \"<string>\",\n      \"moduleVersion\": \"<string>\",\n      \"methodName\": \"<string>\",\n      \"fileName\": \"<string>\",\n      \"lineNumber\": \"<integer>\",\n      \"className\": \"<string>\",\n      \"nativeMethod\": \"<boolean>\"\n    }\n  ],\n  \"instanceId\": {},\n  \"instanceType\": \"<string>\",\n  \"message\": \"<string>\",\n  \"suppressed\": [\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    },\n    {\n      \"stackTrace\": [\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        },\n        {\n          \"classLoaderName\": \"<string>\",\n          \"moduleName\": \"<string>\",\n          \"moduleVersion\": \"<string>\",\n          \"methodName\": \"<string>\",\n          \"fileName\": \"<string>\",\n          \"lineNumber\": \"<integer>\",\n          \"className\": \"<string>\",\n          \"nativeMethod\": \"<boolean>\"\n        }\n      ],\n      \"message\": \"<string>\",\n      \"localizedMessage\": \"<string>\"\n    }\n  ],\n  \"localizedMessage\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:7070/rs-telco-service"
+		}
+	]
+}

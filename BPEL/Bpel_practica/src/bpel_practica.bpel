@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process
+    name="bpel_practica"
+    targetNamespace="http://enterprise.netbeans.org/bpel/Bpel_practica/bpel_practica"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/Bpel_practica/bpel_practica"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://rs.udc.es/rating" xmlns:ns1="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getCallsInfo" xmlns:ns2="http://rs.udc.es/telco" xmlns:ns3="http://rs.udc.es/reward" xmlns:ns4="http://rs.udc.es/billing" xmlns:ns5="http://enterprise.netbeans.org/bpel/WizardCorrelationProperties">
+    <import namespace="http://enterprise.netbeans.org/bpel/TelcoServiceWrapper" location="TelcoServiceWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://rs.udc.es/telco" location="TelcoService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/RewardServiceWrapper" location="RewardServiceWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://rs.udc.es/reward" location="RewardService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getCallsInfo" location="getCallsInfo.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/RatingServiceWrapper" location="RatingServiceWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://rs.udc.es/rating" location="RatingService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/BillingServiceWrapper" location="BillingServiceWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://rs.udc.es/billing" location="BillingService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://rs.udc.es/billing" location="BillingService_schema1.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
+    <import namespace="http://rs.udc.es/telco" location="TelcoService_schema1.xsd" importType="http://www.w3.org/2001/XMLSchema"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCall" location="getConfirmationCall.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/WizardCorrelationProperties" location="WizardCorrelationProperties.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCallPaid" location="getConfirmationCallPaid.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="TelcoServicePartnerLink" xmlns:tns="http://enterprise.netbeans.org/bpel/TelcoServiceWrapper" partnerLinkType="tns:TelcoProviderLinkType" partnerRole="TelcoProviderRole"/>
+        <partnerLink name="getCallsInfoPartnerLink" xmlns:tns="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getCallsInfo" partnerLinkType="tns:getCallsInfo" myRole="getCallsInfoPortTypeRole"/>
+        <partnerLink name="getConfirmationCallPartnerLink" xmlns:tns="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCall" partnerLinkType="tns:getConfirmationCall" myRole="getConfirmationCallPortTypeRole"/>
+        <partnerLink name="getConfirmationCallPaidPartnerLink" xmlns:tns="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCallPaid" partnerLinkType="tns:getConfirmationCallPaid" myRole="getConfirmationCallPaidPortTypeRole"/>
+        <partnerLink name="RatingServicePartnerLink" xmlns:tns="http://enterprise.netbeans.org/bpel/RatingServiceWrapper" partnerLinkType="tns:RatingProviderLinkType" partnerRole="RatingProviderRole"/>
+        <partnerLink name="BillingServicePartnerLink" xmlns:tns="http://enterprise.netbeans.org/bpel/BillingServiceWrapper" partnerLinkType="tns:BillingProviderLinkType" partnerRole="BillingProviderRole"/>
+        <partnerLink name="RewardServicePartnerLink" xmlns:tns="http://enterprise.netbeans.org/bpel/RewardServiceWrapper" partnerLinkType="tns:RewardProviderLinkType" partnerRole="RewardProviderRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="GetConfirmationCallPaidOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCallPaid" messageType="tns:getConfirmationCallPaidOperationRequest"/>
+        <variable name="GetConfirmationCallOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCall" messageType="tns:getConfirmationCallOperationRequest"/>
+        <variable name="resultList" messageType="ns4:createAndSendBill">
+            <sxed:editor>
+                <sxed:predicate path="$resultList.parameters/priced-call[$auxIndex]" source="to"/>
+            </sxed:editor>
+        </variable>
+        <variable name="ChangeStatusOut1" messageType="ns2:changeStatusResponse"/>
+        <variable name="ChangeStatusIn1" messageType="ns2:changeStatus"/>
+        <variable name="pendingPointsAmount" type="xs:int"/>
+        <variable name="paymentStatus" type="ns2:phoneCallStatus"/>
+        <variable name="AddPendingPointsOut" messageType="ns3:addPendingPointsResponse"/>
+        <variable name="AddPendingPointsIn" messageType="ns3:addPendingPoints"/>
+        <variable name="timeFlag" type="xs:boolean"/>
+        <variable name="SendConfirmationOperationIn" messageType="ns1:sendConfirmationRequest"/>
+        <variable name="RemovePendingPointsOut" xmlns:tns="http://rs.udc.es/reward" messageType="tns:removePendingPointsResponse"/>
+        <variable name="RemovePendingPointsIn" xmlns:tns="http://rs.udc.es/reward" messageType="tns:removePendingPoints"/>
+        <variable name="ConfirmPendingPointsOut" xmlns:tns="http://rs.udc.es/reward" messageType="tns:confirmPendingPointsResponse"/>
+        <variable name="ConfirmPendingPointsIn" xmlns:tns="http://rs.udc.es/reward" messageType="tns:confirmPendingPoints"/>
+        <variable name="GetPendingPointsOut" xmlns:tns="http://rs.udc.es/reward" messageType="tns:getPendingPointsResponse"/>
+        <variable name="GetPendingPointsIn" xmlns:tns="http://rs.udc.es/reward" messageType="tns:getPendingPoints"/>
+        <variable name="ChangeStatusOut" xmlns:tns="http://rs.udc.es/telco" messageType="tns:changeStatusResponse"/>
+        <variable name="ChangeStatusIn" xmlns:tns="http://rs.udc.es/telco" messageType="tns:changeStatus"/>
+        <variable name="CreateAndSendBillOut" xmlns:tns="http://rs.udc.es/billing" messageType="tns:createAndSendBillResponse"/>
+        <variable name="CreateAndSendBillIn" xmlns:tns="http://rs.udc.es/billing" messageType="tns:createAndSendBill"/>
+        <variable name="GetDiscountOut" messageType="ns0:getDiscountResponse"/>
+        <variable name="GetDiscountIn" messageType="ns0:getDiscount"/>
+        <variable name="GetPhoneCallPriceOut" messageType="ns0:getPhoneCallPriceResponse"/>
+        <variable name="GetPhoneCallPriceIn" messageType="ns0:getPhoneCallPrice"/>
+        <variable name="FindCallsToBillOut" xmlns:tns="http://rs.udc.es/telco" messageType="tns:findCallsToBillResponse">
+            <sxed:editor>
+                <sxed:predicate path="$FindCallsToBillOut.parameters/return[$ForEach1Counter]" source="from"/>
+                <sxed:predicate path="$FindCallsToBillOut.parameters/return[$ForEachCallCounter]" source="from"/>
+            </sxed:editor>
+        </variable>
+        <variable name="FindCallsToBillIn" xmlns:tns="http://rs.udc.es/telco" messageType="tns:findCallsToBill"/>
+        <variable name="GetCallsInfoOperationOut" messageType="ns1:getCallsInfoOperationResponse"/>
+        <variable name="GetCallsInfoOperationIn" messageType="ns1:getCallsInfoOperationRequest"/>
+        <variable name="auxIndex" type="xs:int"/>
+        <variable name="TelcoError" type="xs:string"/>
+    </variables>
+    <correlationSets>
+        <correlationSet name="waitConfirmationCorrelationSet" properties="ns1:clientID"/>
+        <correlationSet name="wzrd_set_inputFromClientReceive_Receive1" properties="ns5:wzrd_prop_long_long"/>
+        <correlationSet name="wzrd_set_inputFromClientReceive_Receive1_1" properties="ns5:wzrd_prop_int_int"/>
+        <correlationSet name="wzrd_set_inputFromClientReceive_Receive1_2" properties="ns5:wzrd_prop_byte_byte"/>
+    </correlationSets>
+    <sequence>
+        <receive name="inputFromClientReceive" createInstance="yes" partnerLink="getCallsInfoPartnerLink" operation="getCallsInfoOperation" portType="ns1:getCallsInfoPortType" variable="GetCallsInfoOperationIn">
+            <correlations>
+                <correlation set="wzrd_set_inputFromClientReceive_Receive1" initiate="yes"/>
+                <correlation set="wzrd_set_inputFromClientReceive_Receive1_1" initiate="yes"/>
+                <correlation set="wzrd_set_inputFromClientReceive_Receive1_2" initiate="yes"/>
+            </correlations>
+        </receive>
+        <assign name="clientInputAssign">
+            <copy>
+                <from>1</from>
+                <to variable="auxIndex"/>
+            </copy>
+            <copy>
+                <from variable="GetCallsInfoOperationIn" part="clientId"/>
+                <to>$FindCallsToBillIn.parameters/customerId</to>
+            </copy>
+            <copy>
+                <from variable="GetCallsInfoOperationIn" part="month"/>
+                <to>$FindCallsToBillIn.parameters/month</to>
+            </copy>
+            <copy>
+                <from variable="GetCallsInfoOperationIn" part="year"/>
+                <to>$FindCallsToBillIn.parameters/year</to>
+            </copy>
+        </assign>
+        <scope name="findCallsScope">
+            <faultHandlers>
+                <catch faultName="ns2:TelcoException" faultMessageType="ns2:TelcoException" faultVariable="telcoServiceException">
+                    <sequence name="Sequence1">
+                        <assign name="Assign1">
+                            <copy>
+                                <from>'Exception en el input introducido: no existe el cliente, no existen llamadas o llamas en estado distinto a pending'</from>
+                                <to variable="TelcoError"/>
+                            </copy>
+                        </assign>
+                        <exit name="TelcoExceptionExit"/>
+                    </sequence>
+                </catch>
+            </faultHandlers>
+            <invoke name="findCallsInvoke" partnerLink="TelcoServicePartnerLink" operation="findCallsToBill" portType="ns2:TelcoProvider" inputVariable="FindCallsToBillIn" outputVariable="FindCallsToBillOut"></invoke>
+        </scope>
+        <flow name="Flow1">
+            <forEach name="ForEachCall" parallel="no" counterName="ForEachCallCounter">
+                <startCounterValue>1</startCounterValue>
+                <finalCounterValue>count($FindCallsToBillOut.parameters/return)</finalCounterValue>
+                <completionCondition>
+                    <branches>count($FindCallsToBillOut.parameters/return)</branches>
+                </completionCondition>
+                <scope name="ForEachScope">
+                    <variables>
+                        <variable name="GetPhoneCallPriceOut" messageType="ns0:getPhoneCallPriceResponse"/>
+                        <variable name="GetPhoneCallPriceIn" messageType="ns0:getPhoneCallPrice"/>
+                    </variables>
+                    <sequence name="LoopSequence">
+                        <assign name="callToGetPriceAssign">
+                            <copy>
+                                <from>$FindCallsToBillOut.parameters/return[$ForEachCallCounter]/destinationNumber
+                                    <sxed:editor>
+                                        <sxed:predicate path="$FindCallsToBillOut.parameters/return[$ForEachCallCounter]" source="from"/>
+                                    </sxed:editor>
+                                </from>
+                                <to>$GetPhoneCallPriceIn.parameters/phoneCall/destinationNumber</to>
+                            </copy>
+                            <copy>
+                                <from>$FindCallsToBillOut.parameters/return[$ForEachCallCounter]/duration
+                                    <sxed:editor>
+                                        <sxed:predicate path="$FindCallsToBillOut.parameters/return[$ForEachCallCounter]" source="from"/>
+                                    </sxed:editor>
+                                </from>
+                                <to>$GetPhoneCallPriceIn.parameters/phoneCall/duration</to>
+                            </copy>
+                            <copy>
+                                <from>$FindCallsToBillOut.parameters/return[$ForEachCallCounter]/phoneCallId
+                                    <sxed:editor>
+                                        <sxed:predicate path="$FindCallsToBillOut.parameters/return[$ForEachCallCounter]" source="from"/>
+                                    </sxed:editor>
+                                </from>
+                                <to>$GetPhoneCallPriceIn.parameters/phoneCall/phoneCallId</to>
+                            </copy>
+                            <copy>
+                                <from>$FindCallsToBillOut.parameters/return[$ForEachCallCounter]/phoneCallType
+                                    <sxed:editor>
+                                        <sxed:predicate path="$FindCallsToBillOut.parameters/return[$ForEachCallCounter]" source="from"/>
+                                    </sxed:editor>
+                                </from>
+                                <to>$GetPhoneCallPriceIn.parameters/phoneCall/phoneCallType</to>
+                            </copy>
+                            <copy>
+                                <from>$FindCallsToBillOut.parameters/return[$ForEachCallCounter]/startDate
+                                    <sxed:editor>
+                                        <sxed:predicate path="$FindCallsToBillOut.parameters/return[$ForEachCallCounter]" source="from"/>
+                                    </sxed:editor>
+                                </from>
+                                <to>$GetPhoneCallPriceIn.parameters/phoneCall/startDate</to>
+                            </copy>
+                        </assign>
+                        <invoke name="getPhoneCallPriceInvoke" partnerLink="RatingServicePartnerLink" operation="getPhoneCallPrice" portType="ns0:RatingProvider" inputVariable="GetPhoneCallPriceIn" outputVariable="GetPhoneCallPriceOut"/>
+                        <assign name="setInListAssign">
+                            <copy>
+                                <from>1 + $auxIndex</from>
+                                <to variable="auxIndex"/>
+                            </copy>
+                            <copy>
+                                <from>$FindCallsToBillOut.parameters/return[$ForEachCallCounter]/customerId
+                                    <sxed:editor>
+                                        <sxed:predicate path="$FindCallsToBillOut.parameters/return[$ForEachCallCounter]" source="from"/>
+                                    </sxed:editor>
+                                </from>
+                                <to>$resultList.parameters/priced-call[$auxIndex]/customerId
+                                    <sxed:editor>
+                                        <sxed:predicate path="$resultList.parameters/priced-call[$auxIndex]" source="to"/>
+                                    </sxed:editor>
+                                </to>
+                            </copy>
+                            <copy>
+                                <from>$FindCallsToBillOut.parameters/return[$ForEachCallCounter]/destinationNumber
+                                    <sxed:editor>
+                                        <sxed:predicate path="$FindCallsToBillOut.parameters/return[$ForEachCallCounter]" source="from"/>
+                                    </sxed:editor>
+                                </from>
+                                <to>$resultList.parameters/priced-call[$auxIndex]/destinationNumber
+                                    <sxed:editor>
+                                        <sxed:predicate path="$resultList.parameters/priced-call[$auxIndex]" source="to"/>
+                                    </sxed:editor>
+                                </to>
+                            </copy>
+                            <copy>
+                                <from>$FindCallsToBillOut.parameters/return[$ForEachCallCounter]/duration
+                                    <sxed:editor>
+                                        <sxed:predicate path="$FindCallsToBillOut.parameters/return[$ForEachCallCounter]" source="from"/>
+                                    </sxed:editor>
+                                </from>
+                                <to>$resultList.parameters/priced-call[$auxIndex]/duration
+                                    <sxed:editor>
+                                        <sxed:predicate path="$resultList.parameters/priced-call[$auxIndex]" source="to"/>
+                                    </sxed:editor>
+                                </to>
+                            </copy>
+                            <copy>
+                                <from>$FindCallsToBillOut.parameters/return[$ForEachCallCounter]/phoneCallId
+                                    <sxed:editor>
+                                        <sxed:predicate path="$FindCallsToBillOut.parameters/return[$ForEachCallCounter]" source="from"/>
+                                    </sxed:editor>
+                                </from>
+                                <to>$resultList.parameters/priced-call[$auxIndex]/phoneCallId
+                                    <sxed:editor>
+                                        <sxed:predicate path="$resultList.parameters/priced-call[$auxIndex]" source="to"/>
+                                    </sxed:editor>
+                                </to>
+                            </copy>
+                            <copy>
+                                <from>$FindCallsToBillOut.parameters/return[$ForEachCallCounter]/phoneCallType
+                                    <sxed:editor>
+                                        <sxed:predicate path="$FindCallsToBillOut.parameters/return[$ForEachCallCounter]" source="from"/>
+                                    </sxed:editor>
+                                </from>
+                                <to>$resultList.parameters/priced-call[$auxIndex]/phoneCallType
+                                    <sxed:editor>
+                                        <sxed:predicate path="$resultList.parameters/priced-call[$auxIndex]" source="to"/>
+                                    </sxed:editor>
+                                </to>
+                            </copy>
+                            <copy>
+                                <from>$FindCallsToBillOut.parameters/return[$ForEachCallCounter]/startDate
+                                    <sxed:editor>
+                                        <sxed:predicate path="$FindCallsToBillOut.parameters/return[$ForEachCallCounter]" source="from"/>
+                                    </sxed:editor>
+                                </from>
+                                <to>$resultList.parameters/priced-call[$auxIndex]/startDate
+                                    <sxed:editor>
+                                        <sxed:predicate path="$resultList.parameters/priced-call[$auxIndex]" source="to"/>
+                                    </sxed:editor>
+                                </to>
+                            </copy>
+                            <copy>
+                                <from>$GetPhoneCallPriceOut.parameters/return</from>
+                                <to>$resultList.parameters/priced-call[$auxIndex]/price
+                                    <sxed:editor>
+                                        <sxed:predicate path="$resultList.parameters/priced-call[$auxIndex]" source="to"/>
+                                    </sxed:editor>
+                                </to>
+                            </copy>
+                            <copy>
+                                <from>$FindCallsToBillOut.parameters/return[$ForEachCallCounter]/customerId
+                                    <sxed:editor>
+                                        <sxed:predicate path="$FindCallsToBillOut.parameters/return[$ForEachCallCounter]" source="from"/>
+                                    </sxed:editor>
+                                </from>
+                                <to>$resultList.parameters/customerId</to>
+                            </copy>
+                            <copy>
+                                <from variable="GetCallsInfoOperationIn" part="month"/>
+                                <to>$resultList.parameters/month</to>
+                            </copy>
+                            <copy>
+                                <from variable="GetCallsInfoOperationIn" part="year"/>
+                                <to>$resultList.parameters/year</to>
+                            </copy>
+                        </assign>
+                    </sequence>
+                </scope>
+            </forEach>
+            <sequence name="getDiscountSequence">
+                <assign name="paramsToDiscountAssign">
+                    <copy>
+                        <from variable="GetCallsInfoOperationIn" part="clientId"/>
+                        <to>$GetDiscountIn.parameters/customerId</to>
+                    </copy>
+                    <copy>
+                        <from variable="GetCallsInfoOperationIn" part="month"/>
+                        <to>$GetDiscountIn.parameters/month</to>
+                    </copy>
+                    <copy>
+                        <from variable="GetCallsInfoOperationIn" part="year"/>
+                        <to>$GetDiscountIn.parameters/year</to>
+                    </copy>
+                </assign>
+                <scope name="getDiscountScope">
+                    <faultHandlers>
+                        <catch faultMessageType="ns0:RatingException" faultVariable="ratingException" faultName="ns0:RatingException">
+                            <assign name="discountZeroAssign">
+                                <copy>
+                                    <from>0</from>
+                                    <to>$GetDiscountOut.parameters/return</to>
+                                </copy>
+                            </assign>
+                        </catch>
+                    </faultHandlers>
+                    <invoke name="getDiscountInvoke" partnerLink="RatingServicePartnerLink" operation="getDiscount" portType="ns0:RatingProvider" inputVariable="GetDiscountIn" outputVariable="GetDiscountOut"/>
+                </scope>
+            </sequence>
+        </flow>
+        <assign name="resultAndDiscountToBillingAssign">
+            <copy>
+                <from>$resultList.parameters/priced-call</from>
+                <to>$CreateAndSendBillIn.parameters/priced-call</to>
+            </copy>
+            <copy>
+                <from variable="GetCallsInfoOperationIn" part="month"/>
+                <to>$CreateAndSendBillIn.parameters/month</to>
+            </copy>
+            <copy>
+                <from variable="GetCallsInfoOperationIn" part="year"/>
+                <to>$CreateAndSendBillIn.parameters/year</to>
+            </copy>
+            <copy>
+                <from variable="GetCallsInfoOperationIn" part="clientId"/>
+                <to>$CreateAndSendBillIn.parameters/customerId</to>
+            </copy>
+            <copy>
+                <from>$GetDiscountOut.parameters/return</from>
+                <to>$resultList.parameters/discount</to>
+            </copy>
+            <copy>
+                <from>$GetDiscountOut.parameters/return</from>
+                <to>$CreateAndSendBillIn.parameters/discount</to>
+            </copy>
+        </assign>
+        <invoke name="createAndSendBillInvoke" partnerLink="BillingServicePartnerLink" operation="createAndSendBill" xmlns:tns="http://rs.udc.es/billing" portType="tns:BillingProvider" inputVariable="CreateAndSendBillIn" outputVariable="CreateAndSendBillOut"/>
+        <receive name="Receive1" createInstance="no" partnerLink="getConfirmationCallPartnerLink" operation="getConfirmationCallOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCall" portType="tns:getConfirmationCallPortType" variable="GetConfirmationCallOperationIn">
+            <correlations>
+                <correlation set="wzrd_set_inputFromClientReceive_Receive1" initiate="no"/>
+                <correlation set="wzrd_set_inputFromClientReceive_Receive1_1" initiate="no"/>
+                <correlation set="wzrd_set_inputFromClientReceive_Receive1_2" initiate="no"/>
+            </correlations>
+        </receive>
+        <assign name="timeFlagPendingPointsAssign">
+            <copy>
+                <from>false()</from>
+                <to variable="timeFlag"/>
+            </copy>
+            <copy>
+                <from>$CreateAndSendBillOut.parameters/return/amount div 10</from>
+                <to variable="pendingPointsAmount"/>
+            </copy>
+        </assign>
+        <assign name="paramsToChangeStatusAssign">
+            <copy>
+                <from>'BILLED'</from>
+                <to>$ChangeStatusIn.parameters/newPhoneCallStatus</to>
+            </copy>
+            <copy>
+                <from variable="GetCallsInfoOperationIn" part="clientId"/>
+                <to>$ChangeStatusIn.parameters/customerId</to>
+            </copy>
+            <copy>
+                <from variable="GetCallsInfoOperationIn" part="month"/>
+                <to>$ChangeStatusIn.parameters/month</to>
+            </copy>
+            <copy>
+                <from variable="GetCallsInfoOperationIn" part="year"/>
+                <to>$ChangeStatusIn.parameters/year</to>
+            </copy>
+        </assign>
+        <invoke name="ChangeStatusInvoke" partnerLink="TelcoServicePartnerLink" operation="changeStatus" xmlns:tns="http://rs.udc.es/telco" portType="tns:TelcoProvider" inputVariable="ChangeStatusIn" outputVariable="ChangeStatusOut"/>
+        <assign name="pendingPointsParamsAssign">
+            <copy>
+                <from variable="GetCallsInfoOperationIn" part="clientId"/>
+                <to>$AddPendingPointsIn.parameters/customerId</to>
+            </copy>
+            <copy>
+                <from variable="pendingPointsAmount"/>
+                <to>$AddPendingPointsIn.parameters/points</to>
+            </copy>
+        </assign>
+        <invoke name="addPendingPointsInvoke" partnerLink="RewardServicePartnerLink" operation="addPendingPoints" portType="ns3:RewardProvider" inputVariable="AddPendingPointsIn" outputVariable="AddPendingPointsOut"/>
+        <receive name="Receive2" createInstance="no" partnerLink="getConfirmationCallPaidPartnerLink" operation="getConfirmationCallPaidOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCallPaid" portType="tns:getConfirmationCallPaidPortType" variable="GetConfirmationCallPaidOperationIn">
+            <correlations>
+                <correlation set="wzrd_set_inputFromClientReceive_Receive1" initiate="no"/>
+                <correlation set="wzrd_set_inputFromClientReceive_Receive1_1" initiate="no"/>
+                <correlation set="wzrd_set_inputFromClientReceive_Receive1_2" initiate="no"/>
+            </correlations>
+        </receive>
+        <assign name="billedStatusAssign">
+            <copy>
+                    <from>'BILLED'</from>
+                        <to variable="paymentStatus"/>
+                </copy>
+        </assign>
+        <if name="successfulPaymentIf">
+            <condition>$GetConfirmationCallPaidOperationIn.confirmation</condition>
+            <sequence name="successfulPaymentScope">
+                <assign name="confirmPointsParamsAssign">
+                    <copy>
+                        <from variable="pendingPointsAmount"/>
+                        <to>$ConfirmPendingPointsIn.parameters/points</to>
+                    </copy>
+                    <copy>
+                        <from variable="GetCallsInfoOperationIn" part="clientId"/>
+                        <to>$ConfirmPendingPointsIn.parameters/customerId</to>
+                    </copy>
+                </assign>
+                <invoke name="confirmPendingPointsInvoke" partnerLink="RewardServicePartnerLink" operation="confirmPendingPoints" xmlns:tns="http://rs.udc.es/reward" portType="tns:RewardProvider" inputVariable="ConfirmPendingPointsIn" outputVariable="ConfirmPendingPointsOut"/>
+                <assign name="paidStatusChangeAssign">
+                    <copy>
+                        <from>'PAID'</from>
+                        <to variable="paymentStatus"/>
+                    </copy>
+                    <copy>
+                        <from variable="GetCallsInfoOperationIn" part="clientId"/>
+                        <to>$ChangeStatusIn1.parameters/customerId</to>
+                    </copy>
+                    <copy>
+                        <from variable="GetCallsInfoOperationIn" part="month"/>
+                        <to>$ChangeStatusIn1.parameters/month</to>
+                    </copy>
+                    <copy>
+                        <from variable="GetCallsInfoOperationIn" part="year"/>
+                        <to>$ChangeStatusIn1.parameters/year</to>
+                    </copy>
+                    <copy>
+                        <from>'PAID'</from>
+                        <to>$ChangeStatusIn1.parameters/newPhoneCallStatus</to>
+                    </copy>
+                </assign>
+                <invoke name="positiveIfChangeStatusInvoke" partnerLink="TelcoServicePartnerLink" operation="changeStatus" xmlns:tns="http://rs.udc.es/telco" portType="tns:TelcoProvider" inputVariable="ChangeStatusIn1" outputVariable="ChangeStatusOut1"/>
+            </sequence>
+            <else>
+                <sequence name="unsuccessfulPaymentScoope">
+                    <assign name="removePointsAssign">
+                        <copy>
+                            <from variable="pendingPointsAmount"/>
+                            <to>$RemovePendingPointsIn.parameters/points</to>
+                        </copy>
+                        <copy>
+                            <from variable="GetCallsInfoOperationIn" part="clientId"/>
+                            <to>$RemovePendingPointsIn.parameters/customertId</to>
+                        </copy>
+                    </assign>
+                    <invoke name="removePendingPointsInvoke" partnerLink="RewardServicePartnerLink" operation="removePendingPoints" xmlns:tns="http://rs.udc.es/reward" portType="tns:RewardProvider" inputVariable="RemovePendingPointsIn" outputVariable="RemovePendingPointsOut"/>
+                </sequence>
+            </else>
+        </if>
+        <assign name="outParamAssign">
+            <copy>
+                <from variable="paymentStatus"/>
+                <to variable="GetCallsInfoOperationOut" part="paymentStatus"/>
+            </copy>
+            <copy>
+                <from>$CreateAndSendBillOut.parameters/return/amount</from>
+                <to variable="GetCallsInfoOperationOut" part="totalAmount"/>
+            </copy>
+            <copy>
+                <from>$CreateAndSendBillOut.parameters/return/billId</from>
+                <to variable="GetCallsInfoOperationOut" part="billId"/>
+            </copy>
+            <copy>
+                <from>$resultList.parameters/priced-call</from>
+                <to>$GetCallsInfoOperationOut.pricedCallsList/priced-call</to>
+            </copy>
+        </assign>
+        <reply name="Reply1" partnerLink="getCallsInfoPartnerLink" operation="getCallsInfoOperation" portType="ns1:getCallsInfoPortType" variable="GetCallsInfoOperationOut"/>
+    </sequence>
+</process>

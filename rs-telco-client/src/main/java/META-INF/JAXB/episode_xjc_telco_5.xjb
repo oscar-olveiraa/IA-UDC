@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por Eclipse Implementation of JAXB v4.0.5 
+Visite https://eclipse-ee4j.github.io/jaxb-ri 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2024.12.09 a las 11:43:18 AM CET
+  -->
+  <bindings scd="x-schema::tns" if-exists="true" auto-acknowledge="true" xmlns:tns="http://ws.udc.es/telco/xml">
+    <schemaBindings map="false">
+      <package name="es.udc.rs.telco.client.service.rest.dto"/>
+    </schemaBindings>
+    <bindings scd="~tns:applicationExceptionJaxbType" if-exists="true" auto-acknowledge="true">
+      <class ref="es.udc.rs.telco.client.service.rest.dto.ApplicationExceptionJaxbType"/>
+    </bindings>
+    <bindings scd="~tns:customerJaxbType" if-exists="true" auto-acknowledge="true">
+      <class ref="es.udc.rs.telco.client.service.rest.dto.CustomerJaxbType"/>
+    </bindings>
+    <bindings scd="~tns:inputValidationExceptionJaxbType" if-exists="true" auto-acknowledge="true">
+      <class ref="es.udc.rs.telco.client.service.rest.dto.InputValidationExceptionJaxbType"/>
+    </bindings>
+    <bindings scd="~tns:instanceNotFoundExceptionJaxbType" if-exists="true" auto-acknowledge="true">
+      <class ref="es.udc.rs.telco.client.service.rest.dto.InstanceNotFoundExceptionJaxbType"/>
+    </bindings>
+    <bindings scd="~tns:phoneCallJaxbType" if-exists="true" auto-acknowledge="true">
+      <class ref="es.udc.rs.telco.client.service.rest.dto.PhoneCallJaxbType"/>
+    </bindings>
+    <bindings scd="~tns:searchedPhoneCallsDtoJaxb" if-exists="true" auto-acknowledge="true">
+      <class ref="es.udc.rs.telco.client.service.rest.dto.SearchedPhoneCallsDtoJaxb"/>
+    </bindings>
+    <bindings scd="~tns:searchedCustomerDtoJaxb" if-exists="true" auto-acknowledge="true">
+      <class ref="es.udc.rs.telco.client.service.rest.dto.SearchedCustomerDtoJaxb"/>
+    </bindings>
+  </bindings>
+</bindings>
+

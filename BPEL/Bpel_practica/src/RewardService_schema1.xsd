@@ -1,0 +1,61 @@
+<!--  Published by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.  -->
+<xs:schema xmlns:tns="http://rs.udc.es/reward" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://rs.udc.es/reward">
+<xs:element name="RewardException" nillable="true" type="xs:string"/>
+<xs:element name="addPendingPoints" type="tns:addPendingPoints"/>
+<xs:element name="addPendingPointsResponse" type="tns:addPendingPointsResponse"/>
+<xs:element name="confirmPendingPoints" type="tns:confirmPendingPoints"/>
+<xs:element name="confirmPendingPointsResponse" type="tns:confirmPendingPointsResponse"/>
+<xs:element name="getPendingPoints" type="tns:getPendingPoints"/>
+<xs:element name="getPendingPointsResponse" type="tns:getPendingPointsResponse"/>
+<xs:element name="getPoints" type="tns:getPoints"/>
+<xs:element name="getPointsResponse" type="tns:getPointsResponse"/>
+<xs:element name="removePendingPoints" type="tns:removePendingPoints"/>
+<xs:element name="removePendingPointsResponse" type="tns:removePendingPointsResponse"/>
+<xs:complexType name="removePendingPoints">
+<xs:sequence>
+<xs:element name="customertId" type="xs:long" minOccurs="0"/>
+<xs:element name="points" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removePendingPointsResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getPendingPoints">
+<xs:sequence>
+<xs:element name="customerId" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getPendingPointsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="confirmPendingPoints">
+<xs:sequence>
+<xs:element name="customerId" type="xs:long" minOccurs="0"/>
+<xs:element name="points" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="confirmPendingPointsResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getPoints">
+<xs:sequence>
+<xs:element name="customerId" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getPointsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addPendingPoints">
+<xs:sequence>
+<xs:element name="customerId" type="xs:long" minOccurs="0"/>
+<xs:element name="points" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addPendingPointsResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>

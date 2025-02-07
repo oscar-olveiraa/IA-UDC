@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9bc2d23e-759b-41bb-8e99-862241dd7b9b" activeEnvironment="Default" name="flow_practica_ia" resourceRoot="" soapui-version="5.7.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="69d4c020-d795-486c-87fd-176f4a6182e9" wsaVersion="NONE" name="casaBinding1" type="wsdl" bindingName="{CompositeApp1}casaBinding1" soapVersion="1_1" anonymous="optional" definition="http://localhost:5050/CompositeApp1/getCallsInfo?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:7070/rs-telco-wscontrib/services/TelcoService</con:endpoint></con:endpoints><con:operation id="92244ae1-0f2b-4db9-b20e-989a086ac557" isOneWay="false" action="" name="changeStatus" bindingOperationName="changeStatus" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8a20a950-ed3c-44b5-a113-af79a1187c2c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7070/rs-telco-wscontrib/services/TelcoService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tel="http://rs.udc.es/telco">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tel:changeStatus>
+         <!--Optional:-->
+         <customerId>?</customerId>
+         <!--Optional:-->
+         <month>?</month>
+         <!--Optional:-->
+         <year>?</year>
+         <!--Optional:-->
+         <newPhoneCallStatus>?</newPhoneCallStatus>
+      </tel:changeStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://rs.udc.es/telco/TelcoProvider/changeStatusRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="32c7372d-d0b2-4827-8dba-7a78609c2b81" isOneWay="false" action="" name="findCallsToBill" bindingOperationName="findCallsToBill" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3444a45a-1a9a-4c9d-8662-95169ab5c38f" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7070/rs-telco-wscontrib/services/TelcoService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tel="http://rs.udc.es/telco">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tel:findCallsToBill>
+         <!--Optional:-->
+         <customerId>?</customerId>
+         <!--Optional:-->
+         <month>?</month>
+         <!--Optional:-->
+         <year>?</year>
+      </tel:findCallsToBill>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://rs.udc.es/telco/TelcoProvider/findCallsToBillRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="b5d7622f-f135-4f0e-9966-b8c9d77de0bb" wsaVersion="NONE" name="casaBinding3" type="wsdl" bindingName="{CompositeApp1}casaBinding3" soapVersion="1_1" anonymous="optional" definition="http://localhost:5050/CompositeApp1/getCallsInfo?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:5050/CompositeApp1/getConfirmationCall</con:endpoint></con:endpoints><con:operation id="712f2348-e6b7-41e0-92ce-54689cf10002" isOneWay="false" action="" name="getConfirmationCallOperation" bindingOperationName="getConfirmationCallOperation" type="One-Way" inputName="input1" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1b4c9bb5-860a-44c3-b950-88fa1fb6e34d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:5050/CompositeApp1/getConfirmationCall</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="CompositeApp1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:getConfirmationCallOperation>
+         <customerId>2</customerId>
+         <month>9</month>
+         <year>2024</year>
+      </com:getConfirmationCallOperation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="CompositeApp1/getConfirmationCallPortType/input1"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="a7993043-d7d2-40a2-9715-4d68a65da3fc" wsaVersion="NONE" name="casaBinding2" type="wsdl" bindingName="{CompositeApp1}casaBinding2" soapVersion="1_1" anonymous="optional" definition="http://localhost:5050/CompositeApp1/getCallsInfo?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:5050/CompositeApp1/getCallsInfo</con:endpoint></con:endpoints><con:operation id="436cb7a2-7459-4dc5-9385-3e015e9e9dcf" isOneWay="false" action="" name="getCallsInfoOperation" bindingOperationName="getCallsInfoOperation" type="Request-Response" outputName="output1" inputName="input1" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bd23e517-a3e1-4b53-8b4f-8cc396ed7ac9" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:5050/CompositeApp1/getCallsInfo</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="CompositeApp1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:getCallsInfoOperation>
+         <clientId>2</clientId>
+         <month>9</month>
+         <year>2024</year>
+      </com:getCallsInfoOperation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="CompositeApp1/getCallsInfoPortType/input1"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="d85f9c69-df0e-411b-a022-36e366dbbe1e" wsaVersion="NONE" name="casaBinding5" type="wsdl" bindingName="{CompositeApp1}casaBinding5" soapVersion="1_1" anonymous="optional" definition="http://localhost:5050/CompositeApp1/getCallsInfo?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:7070/rs-telco-wscontrib/services/RewardService</con:endpoint></con:endpoints><con:operation id="29f303a6-dbad-4f3c-8c41-f7424e78067b" isOneWay="false" action="" name="addPendingPoints" bindingOperationName="addPendingPoints" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0ad9a011-d7df-4824-a658-9700153fecbf" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7070/rs-telco-wscontrib/services/RewardService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rew="http://rs.udc.es/reward">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rew:addPendingPoints>
+         <!--Optional:-->
+         <customerId>?</customerId>
+         <points>?</points>
+      </rew:addPendingPoints>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://rs.udc.es/reward/RewardProvider/addPendingPointsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0d07c117-2d22-4c88-b91f-e16805a0435c" isOneWay="false" action="" name="confirmPendingPoints" bindingOperationName="confirmPendingPoints" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="368cc8e9-a69a-485a-aecb-06d9207f7007" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7070/rs-telco-wscontrib/services/RewardService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rew="http://rs.udc.es/reward">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rew:confirmPendingPoints>
+         <!--Optional:-->
+         <customerId>?</customerId>
+         <points>?</points>
+      </rew:confirmPendingPoints>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://rs.udc.es/reward/RewardProvider/confirmPendingPointsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="aa0f25ed-ad7b-43ad-b985-344e473f4a6d" isOneWay="false" action="" name="getPendingPoints" bindingOperationName="getPendingPoints" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="21480f13-3365-4e18-8129-aff21ff0f8b5" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7070/rs-telco-wscontrib/services/RewardService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rew="http://rs.udc.es/reward">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rew:getPendingPoints>
+         <!--Optional:-->
+         <customerId>?</customerId>
+      </rew:getPendingPoints>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://rs.udc.es/reward/RewardProvider/getPendingPointsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c1951170-985c-403e-85f1-051035755d40" isOneWay="false" action="" name="getPoints" bindingOperationName="getPoints" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="068be215-3e61-4dd1-81a4-f2445dbcc922" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7070/rs-telco-wscontrib/services/RewardService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rew="http://rs.udc.es/reward">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rew:getPoints>
+         <!--Optional:-->
+         <customerId>?</customerId>
+      </rew:getPoints>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://rs.udc.es/reward/RewardProvider/getPointsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="27cae50d-7e54-4956-8ff5-8c9656c6c546" isOneWay="false" action="" name="removePendingPoints" bindingOperationName="removePendingPoints" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="96dc7a8a-71df-44f8-977e-bf6db92a9483" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7070/rs-telco-wscontrib/services/RewardService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rew="http://rs.udc.es/reward">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rew:removePendingPoints>
+         <!--Optional:-->
+         <customertId>?</customertId>
+         <points>?</points>
+      </rew:removePendingPoints>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://rs.udc.es/reward/RewardProvider/removePendingPointsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="34f6ae82-1b9d-42d6-baec-fbf8a06cb227" wsaVersion="NONE" name="casaBinding4" type="wsdl" bindingName="{CompositeApp1}casaBinding4" soapVersion="1_1" anonymous="optional" definition="http://localhost:5050/CompositeApp1/getCallsInfo?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:7070/rs-telco-wscontrib/services/RatingService</con:endpoint></con:endpoints><con:operation id="88e902e9-58da-4cfe-ac09-8d9017aeb420" isOneWay="false" action="" name="getDiscount" bindingOperationName="getDiscount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c9559e3b-3c15-47b4-8cf0-177ef89a4975" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7070/rs-telco-wscontrib/services/RatingService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rat="http://rs.udc.es/rating">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rat:getDiscount>
+         <customerId>?</customerId>
+         <month>?</month>
+         <year>?</year>
+      </rat:getDiscount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://rs.udc.es/rating/RatingProvider/getDiscountRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c2311cc8-92ab-4120-ac6f-3ff9da7f6350" isOneWay="false" action="" name="getPhoneCallPrice" bindingOperationName="getPhoneCallPrice" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="59b848c2-db0d-4060-9128-27d1f03ad915" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7070/rs-telco-wscontrib/services/RatingService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rat="http://rs.udc.es/rating">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rat:getPhoneCallPrice>
+         <!--Optional:-->
+         <phoneCall>
+            <!--Optional:-->
+            <destinationNumber>?</destinationNumber>
+            <!--Optional:-->
+            <duration>?</duration>
+            <!--Optional:-->
+            <phoneCallId>?</phoneCallId>
+            <!--Optional:-->
+            <phoneCallType>?</phoneCallType>
+            <!--Optional:-->
+            <startDate>?</startDate>
+         </phoneCall>
+      </rat:getPhoneCallPrice>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://rs.udc.es/rating/RatingProvider/getPhoneCallPriceRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="0b580196-a587-42a3-93b5-9a17d4f5a88f" wsaVersion="NONE" name="casaBinding7" type="wsdl" bindingName="{CompositeApp1}casaBinding7" soapVersion="1_1" anonymous="optional" definition="http://localhost:5050/CompositeApp1/getCallsInfo?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:5050/CompositeApp1/getConfirmationCallPaid</con:endpoint></con:endpoints><con:operation id="a8a1b3b7-3228-4bc4-824e-32734abb44d2" isOneWay="false" action="" name="getConfirmationCallPaidOperation" bindingOperationName="getConfirmationCallPaidOperation" type="One-Way" inputName="input1" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2bead5a2-4970-4e3c-9c75-d618d727f114" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:5050/CompositeApp1/getConfirmationCallPaid</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="CompositeApp1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:getConfirmationCallPaidOperation>
+         <customId>2</customId>
+         <month>9</month>
+         <year>2024</year>
+         <confirmation>true</confirmation>
+      </com:getConfirmationCallPaidOperation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="CompositeApp1/getConfirmationCallPaidPortType/input1"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="375e0c52-9459-49c3-9353-3c5bf29b91f0" wsaVersion="NONE" name="casaBinding6" type="wsdl" bindingName="{CompositeApp1}casaBinding6" soapVersion="1_1" anonymous="optional" definition="http://localhost:5050/CompositeApp1/getCallsInfo?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:5050/CompositeApp1/getCallsInfo?wsdl"><con:part><con:url>http://localhost:5050/CompositeApp1/getCallsInfo?wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="CompositeApp1" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns6="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCallPaid" xmlns:ns5="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCall" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getCallsInfo" xmlns:tns="CompositeApp1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://rs.udc.es/rating" xmlns:ns1="http://rs.udc.es/telco" xmlns:ns4="http://rs.udc.es/reward" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://rs.udc.es/billing">
+  <import namespace="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getCallsInfo" location="http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/getCallsInfo.wsdl"></import>
+  <import namespace="http://rs.udc.es/rating" location="http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/RatingService.wsdl"></import>
+  <import namespace="http://rs.udc.es/billing" location="http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/BillingService.wsdl"></import>
+  <import namespace="http://rs.udc.es/telco" location="http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/TelcoService.wsdl"></import>
+  <import namespace="http://rs.udc.es/reward" location="http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/RewardService.wsdl"></import>
+  <import namespace="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCall" location="http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/getConfirmationCall.wsdl"></import>
+  <import namespace="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCallPaid" location="http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/getConfirmationCallPaid.wsdl"></import>
+  <portType name="dummyCasaPortType"></portType>
+  <binding name="casaBinding1" type="ns1:TelcoProvider">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="findCallsToBill">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="TelcoException">
+        <soap:fault name="TelcoException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="changeStatus">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="TelcoException">
+        <soap:fault name="TelcoException" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <binding name="casaBinding2" type="ns:getCallsInfoPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getCallsInfoOperation">
+      <soap:operation/>
+      <input name="input1">
+        <soap:body use="literal" namespace="CompositeApp1"/>
+      </input>
+      <output name="output1">
+        <soap:body use="literal" namespace="CompositeApp1"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="casaBinding3" type="ns5:getConfirmationCallPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getConfirmationCallOperation">
+      <soap:operation/>
+      <input name="input1">
+        <soap:body use="literal" namespace="CompositeApp1"/>
+      </input>
+    </operation>
+  </binding>
+  <binding name="casaBinding4" type="ns2:RatingProvider">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getDiscount">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RatingException">
+        <soap:fault name="RatingException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getPhoneCallPrice">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RatingException">
+        <soap:fault name="RatingException" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <binding name="casaBinding5" type="ns4:RewardProvider">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getPoints">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RewardException">
+        <soap:fault name="RewardException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getPendingPoints">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RewardException">
+        <soap:fault name="RewardException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="addPendingPoints">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RewardException">
+        <soap:fault name="RewardException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="confirmPendingPoints">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RewardException">
+        <soap:fault name="RewardException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="removePendingPoints">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="RewardException">
+        <soap:fault name="RewardException" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <binding name="casaBinding6" type="ns3:BillingProvider">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="createAndSendBill">
+      <soap:operation/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="casaBinding7" type="ns6:getConfirmationCallPaidPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getConfirmationCallPaidOperation">
+      <soap:operation/>
+      <input name="input1">
+        <soap:body use="literal" namespace="CompositeApp1"/>
+      </input>
+    </operation>
+  </binding>
+  <service name="CompositeApp1Service1">
+    <port name="TelcoProvider" binding="tns:casaBinding1">
+      <soap:address location="http://localhost:7070/rs-telco-wscontrib/services/TelcoService"/>
+    </port>
+  </service>
+  <service name="CompositeApp1Service3">
+    <port name="sendConfirmation" binding="tns:casaBinding3">
+      <soap:address location="http://localhost:5050/CompositeApp1/getConfirmationCall"/>
+    </port>
+  </service>
+  <service name="CompositeApp1Service2">
+    <port name="getCallsInfo" binding="tns:casaBinding2">
+      <soap:address location="http://localhost:5050/CompositeApp1/getCallsInfo"/>
+    </port>
+  </service>
+  <service name="CompositeApp1Service5">
+    <port name="rewardProvider" binding="tns:casaBinding5">
+      <soap:address location="http://localhost:7070/rs-telco-wscontrib/services/RewardService"/>
+    </port>
+  </service>
+  <service name="CompositeApp1Service4">
+    <port name="RatingProvider" binding="tns:casaBinding4">
+      <soap:address location="http://localhost:7070/rs-telco-wscontrib/services/RatingService"/>
+    </port>
+  </service>
+  <service name="CompositeApp1Service7">
+    <port name="sendConfirmationPaid" binding="tns:casaBinding7">
+      <soap:address location="http://localhost:5050/CompositeApp1/getConfirmationCallPaid"/>
+    </port>
+  </service>
+  <service name="CompositeApp1Service6">
+    <port name="billingProvider" binding="tns:casaBinding6">
+      <soap:address location="http://localhost:7070/rs-telco-wscontrib/services/BillingService"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/getCallsInfo.wsdl</con:url><con:content><![CDATA[<definitions name="getCallsInfo" targetNamespace="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getCallsInfo" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getCallsInfo" xmlns:ns="http://rs.udc.es/telco" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:ns0="http://rs.udc.es/billing">
+  <types>
+    <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getCallsInfo">
+      <xsd:import namespace="http://rs.udc.es/telco" schemaLocation="TelcoService_schema1.xsd"/>
+      <xsd:import namespace="http://rs.udc.es/billing" schemaLocation="BillingService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="getCallsInfoOperationRequest">
+    <part name="clientId" type="xsd:long"/>
+    <part name="month" type="xsd:byte"/>
+    <part name="year" type="xsd:int"/>
+  </message>
+  <message name="getCallsInfoOperationResponse">
+    <part name="billId" type="xsd:long"/>
+    <part name="totalAmount" type="xsd:double"/>
+    <part name="paymentStatus" type="ns:phoneCallStatus"/>
+    <part name="pricedCallsList" type="ns0:pricedPhoneCallsList"/>
+  </message>
+  <message name="sendConfirmationRequest">
+    <part name="confirmation" type="xsd:boolean"/>
+  </message>
+  <message name="sendConfirmationResponse">
+    <part name="confirmation" type="xsd:boolean"/>
+  </message>
+  <portType name="getCallsInfoPortType">
+    <operation name="getCallsInfoOperation">
+      <input name="input1" message="tns:getCallsInfoOperationRequest"/>
+      <output name="output1" message="tns:getCallsInfoOperationResponse"/>
+    </operation>
+  </portType>
+  <portType name="sendConfirmationPortType">
+    <operation name="sendConfirmationOperation">
+      <input name="input1" message="tns:sendConfirmationRequest"/>
+      <output name="output1" message="tns:sendConfirmationResponse"/>
+    </operation>
+  </portType>
+  <plnk:partnerLinkType name="getCallsInfo">
+    <!--A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes.
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+    <plnk:role name="getCallsInfoPortTypeRole" portType="tns:getCallsInfoPortType"/>
+  </plnk:partnerLinkType>
+  <plnk:partnerLinkType name="sendConfirmation">
+    <!--A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes.
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+    <plnk:role name="sendConfirmationPortTypeRole" portType="tns:sendConfirmationPortType"/>
+  </plnk:partnerLinkType>
+  <vprop:property name="clientID" type="xsd:long"/>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/TelcoService_schema1.xsd</con:url><con:content><![CDATA[<!--Published by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.-->
+<xs:schema version="1.0" targetNamespace="http://rs.udc.es/telco" xmlns:tns="http://rs.udc.es/telco" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="TelcoException" nillable="true" type="xs:string"/>
+  <xs:element name="changeStatus" type="tns:changeStatus"/>
+  <xs:element name="changeStatusResponse" type="tns:changeStatusResponse"/>
+  <xs:element name="findCallsToBill" type="tns:findCallsToBill"/>
+  <xs:element name="findCallsToBillResponse" type="tns:findCallsToBillResponse"/>
+  <xs:complexType name="changeStatus">
+    <xs:sequence>
+      <xs:element name="customerId" type="xs:long" minOccurs="0"/>
+      <xs:element name="month" type="xs:byte" minOccurs="0"/>
+      <xs:element name="year" type="xs:int" minOccurs="0"/>
+      <xs:element name="newPhoneCallStatus" type="tns:phoneCallStatus" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changeStatusResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="findCallsToBill">
+    <xs:sequence>
+      <xs:element name="customerId" type="xs:long" minOccurs="0"/>
+      <xs:element name="month" type="xs:byte" minOccurs="0"/>
+      <xs:element name="year" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCallsToBillResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:phoneCall" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="phoneCall">
+    <xs:sequence>
+      <xs:element name="customerId" type="xs:long" minOccurs="0"/>
+      <xs:element name="destinationNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="duration" type="xs:long" minOccurs="0"/>
+      <xs:element name="phoneCallId" type="xs:long" minOccurs="0"/>
+      <xs:element name="phoneCallStatus" type="tns:phoneCallStatus" minOccurs="0"/>
+      <xs:element name="phoneCallType" type="tns:phoneCallType" minOccurs="0"/>
+      <xs:element name="startDate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="phoneCallStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PENDING"/>
+      <xs:enumeration value="BILLED"/>
+      <xs:enumeration value="PAID"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="phoneCallType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LOCAL"/>
+      <xs:enumeration value="NATIONAL"/>
+      <xs:enumeration value="INTERNATIONAL"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/BillingService_schema1.xsd</con:url><con:content><![CDATA[<!--Published by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.-->
+<xs:schema version="1.0" targetNamespace="http://rs.udc.es/billing" xmlns:tns="http://rs.udc.es/billing" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="createAndSendBill" type="tns:createAndSendBill"/>
+  <xs:element name="createAndSendBillResponse" type="tns:createAndSendBillResponse"/>
+  <xs:complexType name="createAndSendBill">
+    <xs:sequence>
+      <xs:element name="customerId" type="xs:long" minOccurs="0"/>
+      <xs:element name="month" type="xs:short"/>
+      <xs:element name="year" type="xs:short"/>
+      <xs:element name="priced-call" type="tns:pricedPhoneCall" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="discount" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pricedPhoneCall">
+    <xs:sequence>
+      <xs:element name="customerId" type="xs:long" minOccurs="0"/>
+      <xs:element name="destinationNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="duration" type="xs:long" minOccurs="0"/>
+      <xs:element name="phoneCallId" type="xs:long" minOccurs="0"/>
+      <xs:element name="phoneCallType" type="tns:phoneCallType" minOccurs="0"/>
+      <xs:element name="price" type="xs:double"/>
+      <xs:element name="startDate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pricedPhoneCallsList">
+    <xs:sequence>
+      <xs:element name="priced-call" type="tns:pricedPhoneCall" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createAndSendBillResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:billSummary" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="billSummary">
+    <xs:sequence>
+      <xs:element name="amount" type="xs:double"/>
+      <xs:element name="billId" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="phoneCallType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LOCAL"/>
+      <xs:enumeration value="NATIONAL"/>
+      <xs:enumeration value="INTERNATIONAL"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/RatingService.wsdl</con:url><con:content><![CDATA[<!--Published by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.-->
+<!--Generated by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.-->
+<definitions targetNamespace="http://rs.udc.es/rating" name="RatingProviderService" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://rs.udc.es/rating" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://rs.udc.es/rating" schemaLocation="RatingService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="getDiscount">
+    <part name="parameters" element="tns:getDiscount"/>
+  </message>
+  <message name="getDiscountResponse">
+    <part name="parameters" element="tns:getDiscountResponse"/>
+  </message>
+  <message name="RatingException">
+    <part name="fault" element="tns:RatingException"/>
+  </message>
+  <message name="getPhoneCallPrice">
+    <part name="parameters" element="tns:getPhoneCallPrice"/>
+  </message>
+  <message name="getPhoneCallPriceResponse">
+    <part name="parameters" element="tns:getPhoneCallPriceResponse"/>
+  </message>
+  <portType name="RatingProvider">
+    <operation name="getDiscount">
+      <input wsam:Action="http://rs.udc.es/rating/RatingProvider/getDiscountRequest" message="tns:getDiscount"/>
+      <output wsam:Action="http://rs.udc.es/rating/RatingProvider/getDiscountResponse" message="tns:getDiscountResponse"/>
+      <fault message="tns:RatingException" name="RatingException" wsam:Action="http://rs.udc.es/rating/RatingProvider/getDiscount/Fault/RatingException"/>
+    </operation>
+    <operation name="getPhoneCallPrice">
+      <input wsam:Action="http://rs.udc.es/rating/RatingProvider/getPhoneCallPriceRequest" message="tns:getPhoneCallPrice"/>
+      <output wsam:Action="http://rs.udc.es/rating/RatingProvider/getPhoneCallPriceResponse" message="tns:getPhoneCallPriceResponse"/>
+      <fault message="tns:RatingException" name="RatingException" wsam:Action="http://rs.udc.es/rating/RatingProvider/getPhoneCallPrice/Fault/RatingException"/>
+    </operation>
+  </portType>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/RatingService_schema1.xsd</con:url><con:content><![CDATA[<!--Published by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.-->
+<xs:schema version="1.0" targetNamespace="http://rs.udc.es/rating" xmlns:tns="http://rs.udc.es/rating" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RatingException" nillable="true" type="xs:string"/>
+  <xs:element name="getDiscount" type="tns:getDiscount"/>
+  <xs:element name="getDiscountResponse" type="tns:getDiscountResponse"/>
+  <xs:element name="getPhoneCallPrice" type="tns:getPhoneCallPrice"/>
+  <xs:element name="getPhoneCallPriceResponse" type="tns:getPhoneCallPriceResponse"/>
+  <xs:complexType name="getPhoneCallPrice">
+    <xs:sequence>
+      <xs:element name="phoneCall" type="tns:phoneCall" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="phoneCall">
+    <xs:sequence>
+      <xs:element name="destinationNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="duration" type="xs:long" minOccurs="0"/>
+      <xs:element name="phoneCallId" type="xs:long" minOccurs="0"/>
+      <xs:element name="phoneCallType" type="tns:phoneCallType" minOccurs="0"/>
+      <xs:element name="startDate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPhoneCallPriceResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDiscount">
+    <xs:sequence>
+      <xs:element name="customerId" type="xs:long"/>
+      <xs:element name="month" type="xs:short"/>
+      <xs:element name="year" type="xs:short"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDiscountResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="phoneCallType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LOCAL"/>
+      <xs:enumeration value="NATIONAL"/>
+      <xs:enumeration value="INTERNATIONAL"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/BillingService.wsdl</con:url><con:content><![CDATA[<!--Published by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.-->
+<!--Generated by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.-->
+<definitions targetNamespace="http://rs.udc.es/billing" name="BillingProviderService" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://rs.udc.es/billing" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://rs.udc.es/billing" schemaLocation="BillingService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="createAndSendBill">
+    <part name="parameters" element="tns:createAndSendBill"/>
+  </message>
+  <message name="createAndSendBillResponse">
+    <part name="parameters" element="tns:createAndSendBillResponse"/>
+  </message>
+  <portType name="BillingProvider">
+    <operation name="createAndSendBill">
+      <input wsam:Action="http://rs.udc.es/billing/BillingProvider/createAndSendBillRequest" message="tns:createAndSendBill"/>
+      <output wsam:Action="http://rs.udc.es/billing/BillingProvider/createAndSendBillResponse" message="tns:createAndSendBillResponse"/>
+    </operation>
+  </portType>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/TelcoService.wsdl</con:url><con:content><![CDATA[<!--Published by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.-->
+<!--Generated by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.-->
+<definitions targetNamespace="http://rs.udc.es/telco" name="TelcoProviderService" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://rs.udc.es/telco" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://rs.udc.es/telco" schemaLocation="TelcoService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="findCallsToBill">
+    <part name="parameters" element="tns:findCallsToBill"/>
+  </message>
+  <message name="findCallsToBillResponse">
+    <part name="parameters" element="tns:findCallsToBillResponse"/>
+  </message>
+  <message name="TelcoException">
+    <part name="fault" element="tns:TelcoException"/>
+  </message>
+  <message name="changeStatus">
+    <part name="parameters" element="tns:changeStatus"/>
+  </message>
+  <message name="changeStatusResponse">
+    <part name="parameters" element="tns:changeStatusResponse"/>
+  </message>
+  <portType name="TelcoProvider">
+    <operation name="findCallsToBill">
+      <input wsam:Action="http://rs.udc.es/telco/TelcoProvider/findCallsToBillRequest" message="tns:findCallsToBill"/>
+      <output wsam:Action="http://rs.udc.es/telco/TelcoProvider/findCallsToBillResponse" message="tns:findCallsToBillResponse"/>
+      <fault message="tns:TelcoException" name="TelcoException" wsam:Action="http://rs.udc.es/telco/TelcoProvider/findCallsToBill/Fault/TelcoException"/>
+    </operation>
+    <operation name="changeStatus">
+      <input wsam:Action="http://rs.udc.es/telco/TelcoProvider/changeStatusRequest" message="tns:changeStatus"/>
+      <output wsam:Action="http://rs.udc.es/telco/TelcoProvider/changeStatusResponse" message="tns:changeStatusResponse"/>
+      <fault message="tns:TelcoException" name="TelcoException" wsam:Action="http://rs.udc.es/telco/TelcoProvider/changeStatus/Fault/TelcoException"/>
+    </operation>
+  </portType>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/RewardService.wsdl</con:url><con:content><![CDATA[<!--Published by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.-->
+<!--Generated by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.-->
+<definitions targetNamespace="http://rs.udc.es/reward" name="RewardProviderService" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://rs.udc.es/reward" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://rs.udc.es/reward" schemaLocation="RewardService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="getPoints">
+    <part name="parameters" element="tns:getPoints"/>
+  </message>
+  <message name="getPointsResponse">
+    <part name="parameters" element="tns:getPointsResponse"/>
+  </message>
+  <message name="RewardException">
+    <part name="fault" element="tns:RewardException"/>
+  </message>
+  <message name="getPendingPoints">
+    <part name="parameters" element="tns:getPendingPoints"/>
+  </message>
+  <message name="getPendingPointsResponse">
+    <part name="parameters" element="tns:getPendingPointsResponse"/>
+  </message>
+  <message name="addPendingPoints">
+    <part name="parameters" element="tns:addPendingPoints"/>
+  </message>
+  <message name="addPendingPointsResponse">
+    <part name="parameters" element="tns:addPendingPointsResponse"/>
+  </message>
+  <message name="confirmPendingPoints">
+    <part name="parameters" element="tns:confirmPendingPoints"/>
+  </message>
+  <message name="confirmPendingPointsResponse">
+    <part name="parameters" element="tns:confirmPendingPointsResponse"/>
+  </message>
+  <message name="removePendingPoints">
+    <part name="parameters" element="tns:removePendingPoints"/>
+  </message>
+  <message name="removePendingPointsResponse">
+    <part name="parameters" element="tns:removePendingPointsResponse"/>
+  </message>
+  <portType name="RewardProvider">
+    <operation name="getPoints">
+      <input wsam:Action="http://rs.udc.es/reward/RewardProvider/getPointsRequest" message="tns:getPoints"/>
+      <output wsam:Action="http://rs.udc.es/reward/RewardProvider/getPointsResponse" message="tns:getPointsResponse"/>
+      <fault message="tns:RewardException" name="RewardException" wsam:Action="http://rs.udc.es/reward/RewardProvider/getPoints/Fault/RewardException"/>
+    </operation>
+    <operation name="getPendingPoints">
+      <input wsam:Action="http://rs.udc.es/reward/RewardProvider/getPendingPointsRequest" message="tns:getPendingPoints"/>
+      <output wsam:Action="http://rs.udc.es/reward/RewardProvider/getPendingPointsResponse" message="tns:getPendingPointsResponse"/>
+      <fault message="tns:RewardException" name="RewardException" wsam:Action="http://rs.udc.es/reward/RewardProvider/getPendingPoints/Fault/RewardException"/>
+    </operation>
+    <operation name="addPendingPoints">
+      <input wsam:Action="http://rs.udc.es/reward/RewardProvider/addPendingPointsRequest" message="tns:addPendingPoints"/>
+      <output wsam:Action="http://rs.udc.es/reward/RewardProvider/addPendingPointsResponse" message="tns:addPendingPointsResponse"/>
+      <fault message="tns:RewardException" name="RewardException" wsam:Action="http://rs.udc.es/reward/RewardProvider/addPendingPoints/Fault/RewardException"/>
+    </operation>
+    <operation name="confirmPendingPoints">
+      <input wsam:Action="http://rs.udc.es/reward/RewardProvider/confirmPendingPointsRequest" message="tns:confirmPendingPoints"/>
+      <output wsam:Action="http://rs.udc.es/reward/RewardProvider/confirmPendingPointsResponse" message="tns:confirmPendingPointsResponse"/>
+      <fault message="tns:RewardException" name="RewardException" wsam:Action="http://rs.udc.es/reward/RewardProvider/confirmPendingPoints/Fault/RewardException"/>
+    </operation>
+    <operation name="removePendingPoints">
+      <input wsam:Action="http://rs.udc.es/reward/RewardProvider/removePendingPointsRequest" message="tns:removePendingPoints"/>
+      <output wsam:Action="http://rs.udc.es/reward/RewardProvider/removePendingPointsResponse" message="tns:removePendingPointsResponse"/>
+      <fault message="tns:RewardException" name="RewardException" wsam:Action="http://rs.udc.es/reward/RewardProvider/removePendingPoints/Fault/RewardException"/>
+    </operation>
+  </portType>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/RewardService_schema1.xsd</con:url><con:content><![CDATA[<!--Published by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.-->
+<xs:schema version="1.0" targetNamespace="http://rs.udc.es/reward" xmlns:tns="http://rs.udc.es/reward" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RewardException" nillable="true" type="xs:string"/>
+  <xs:element name="addPendingPoints" type="tns:addPendingPoints"/>
+  <xs:element name="addPendingPointsResponse" type="tns:addPendingPointsResponse"/>
+  <xs:element name="confirmPendingPoints" type="tns:confirmPendingPoints"/>
+  <xs:element name="confirmPendingPointsResponse" type="tns:confirmPendingPointsResponse"/>
+  <xs:element name="getPendingPoints" type="tns:getPendingPoints"/>
+  <xs:element name="getPendingPointsResponse" type="tns:getPendingPointsResponse"/>
+  <xs:element name="getPoints" type="tns:getPoints"/>
+  <xs:element name="getPointsResponse" type="tns:getPointsResponse"/>
+  <xs:element name="removePendingPoints" type="tns:removePendingPoints"/>
+  <xs:element name="removePendingPointsResponse" type="tns:removePendingPointsResponse"/>
+  <xs:complexType name="removePendingPoints">
+    <xs:sequence>
+      <xs:element name="customertId" type="xs:long" minOccurs="0"/>
+      <xs:element name="points" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removePendingPointsResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getPendingPoints">
+    <xs:sequence>
+      <xs:element name="customerId" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPendingPointsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="confirmPendingPoints">
+    <xs:sequence>
+      <xs:element name="customerId" type="xs:long" minOccurs="0"/>
+      <xs:element name="points" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="confirmPendingPointsResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getPoints">
+    <xs:sequence>
+      <xs:element name="customerId" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPointsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addPendingPoints">
+    <xs:sequence>
+      <xs:element name="customerId" type="xs:long" minOccurs="0"/>
+      <xs:element name="points" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addPendingPointsResponse">
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/getConfirmationCall.wsdl</con:url><con:content><![CDATA[<definitions name="getConfirmationCall" targetNamespace="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCall" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCall" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+  <types/>
+  <message name="getConfirmationCallOperationRequest">
+    <part name="customerId" type="xsd:long"/>
+    <part name="month" type="xsd:byte"/>
+    <part name="year" type="xsd:int"/>
+  </message>
+  <portType name="getConfirmationCallPortType">
+    <operation name="getConfirmationCallOperation">
+      <input name="input1" message="tns:getConfirmationCallOperationRequest"/>
+    </operation>
+  </portType>
+  <plnk:partnerLinkType name="getConfirmationCall">
+    <!--A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes.
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+    <plnk:role name="getConfirmationCallPortTypeRole" portType="tns:getConfirmationCallPortType"/>
+  </plnk:partnerLinkType>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:5050/CompositeApp1-sun-http-binding/Bpel_practica/getConfirmationCallPaid.wsdl</con:url><con:content><![CDATA[<definitions name="getConfirmationCallPaid" targetNamespace="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCallPaid" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/Bpel_practica/src/getConfirmationCallPaid" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+  <types/>
+  <message name="getConfirmationCallPaidOperationRequest">
+    <part name="customId" type="xsd:long"/>
+    <part name="month" type="xsd:byte"/>
+    <part name="year" type="xsd:int"/>
+    <part name="confirmation" type="xsd:boolean"/>
+  </message>
+  <portType name="getConfirmationCallPaidPortType">
+    <operation name="getConfirmationCallPaidOperation">
+      <input name="input1" message="tns:getConfirmationCallPaidOperationRequest"/>
+    </operation>
+  </portType>
+  <plnk:partnerLinkType name="getConfirmationCallPaid">
+    <!--A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes.
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+    <plnk:role name="getConfirmationCallPaidPortTypeRole" portType="tns:getConfirmationCallPaidPortType"/>
+  </plnk:partnerLinkType>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:7070/rs-telco-wscontrib/services/BillingService</con:endpoint></con:endpoints><con:operation id="785d6d56-a048-4cf9-bc82-df6cfa3afe17" isOneWay="false" action="" name="createAndSendBill" bindingOperationName="createAndSendBill" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a19da1bb-f3a6-44fd-968f-96c558d113d5" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7070/rs-telco-wscontrib/services/BillingService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bil="http://rs.udc.es/billing">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <bil:createAndSendBill>
+         <!--Optional:-->
+         <customerId>?</customerId>
+         <month>?</month>
+         <year>?</year>
+         <!--Zero or more repetitions:-->
+         <priced-call>
+            <!--Optional:-->
+            <customerId>?</customerId>
+            <!--Optional:-->
+            <destinationNumber>?</destinationNumber>
+            <!--Optional:-->
+            <duration>?</duration>
+            <!--Optional:-->
+            <phoneCallId>?</phoneCallId>
+            <!--Optional:-->
+            <phoneCallType>?</phoneCallType>
+            <price>?</price>
+            <!--Optional:-->
+            <startDate>?</startDate>
+         </priced-call>
+         <discount>?</discount>
+      </bil:createAndSendBill>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://rs.udc.es/billing/BillingProvider/createAndSendBillRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

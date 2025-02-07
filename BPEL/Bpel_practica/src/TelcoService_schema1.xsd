@@ -1,0 +1,56 @@
+<!--  Published by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.  -->
+<xs:schema xmlns:tns="http://rs.udc.es/telco" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://rs.udc.es/telco">
+<xs:element name="TelcoException" nillable="true" type="xs:string"/>
+<xs:element name="changeStatus" type="tns:changeStatus"/>
+<xs:element name="changeStatusResponse" type="tns:changeStatusResponse"/>
+<xs:element name="findCallsToBill" type="tns:findCallsToBill"/>
+<xs:element name="findCallsToBillResponse" type="tns:findCallsToBillResponse"/>
+<xs:complexType name="changeStatus">
+<xs:sequence>
+<xs:element name="customerId" type="xs:long" minOccurs="0"/>
+<xs:element name="month" type="xs:byte" minOccurs="0"/>
+<xs:element name="year" type="xs:int" minOccurs="0"/>
+<xs:element name="newPhoneCallStatus" type="tns:phoneCallStatus" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="changeStatusResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="findCallsToBill">
+<xs:sequence>
+<xs:element name="customerId" type="xs:long" minOccurs="0"/>
+<xs:element name="month" type="xs:byte" minOccurs="0"/>
+<xs:element name="year" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findCallsToBillResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:phoneCall" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="phoneCall">
+<xs:sequence>
+<xs:element name="customerId" type="xs:long" minOccurs="0"/>
+<xs:element name="destinationNumber" type="xs:string" minOccurs="0"/>
+<xs:element name="duration" type="xs:long" minOccurs="0"/>
+<xs:element name="phoneCallId" type="xs:long" minOccurs="0"/>
+<xs:element name="phoneCallStatus" type="tns:phoneCallStatus" minOccurs="0"/>
+<xs:element name="phoneCallType" type="tns:phoneCallType" minOccurs="0"/>
+<xs:element name="startDate" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:simpleType name="phoneCallStatus">
+<xs:restriction base="xs:string">
+<xs:enumeration value="PENDING"/>
+<xs:enumeration value="BILLED"/>
+<xs:enumeration value="PAID"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="phoneCallType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="LOCAL"/>
+<xs:enumeration value="NATIONAL"/>
+<xs:enumeration value="INTERNATIONAL"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

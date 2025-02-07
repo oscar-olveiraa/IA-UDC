@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TelcoServiceWrapper" targetNamespace="http://enterprise.netbeans.org/bpel/TelcoServiceWrapper" xmlns:tns="http://enterprise.netbeans.org/bpel/TelcoServiceWrapper" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns="http://rs.udc.es/telco">
+    <import location="TelcoService.wsdl" namespace="http://rs.udc.es/telco"/>
+    <plnk:partnerLinkType name="TelcoProviderLinkType">
+        <plnk:role name="TelcoProviderRole" portType="ns:TelcoProvider"/>
+    </plnk:partnerLinkType>
+</definitions>

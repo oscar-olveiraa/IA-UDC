@@ -1,0 +1,48 @@
+<!--  Published by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.  -->
+<xs:schema xmlns:tns="http://rs.udc.es/billing" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://rs.udc.es/billing">
+    <xs:element name="createAndSendBill" type="tns:createAndSendBill"/>
+    <xs:element name="createAndSendBillResponse" type="tns:createAndSendBillResponse"/>
+    <xs:complexType name="createAndSendBill">
+        <xs:sequence>
+            <xs:element name="customerId" type="xs:long" minOccurs="0"/>
+            <xs:element name="month" type="xs:short"/>
+            <xs:element name="year" type="xs:short"/>
+            <xs:element name="priced-call" type="tns:pricedPhoneCall" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="discount" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="pricedPhoneCall">
+        <xs:sequence>
+            <xs:element name="customerId" type="xs:long" minOccurs="0"/>
+            <xs:element name="destinationNumber" type="xs:string" minOccurs="0"/>
+            <xs:element name="duration" type="xs:long" minOccurs="0"/>
+            <xs:element name="phoneCallId" type="xs:long" minOccurs="0"/>
+            <xs:element name="phoneCallType" type="tns:phoneCallType" minOccurs="0"/>
+            <xs:element name="price" type="xs:double"/>
+            <xs:element name="startDate" type="xs:dateTime" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="pricedPhoneCallsList">
+        <xs:sequence>
+            <xs:element name="priced-call" type="tns:pricedPhoneCall" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="createAndSendBillResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:billSummary" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="billSummary">
+        <xs:sequence>
+            <xs:element name="amount" type="xs:double"/>
+            <xs:element name="billId" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="phoneCallType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LOCAL"/>
+            <xs:enumeration value="NATIONAL"/>
+            <xs:enumeration value="INTERNATIONAL"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
